@@ -1,0 +1,14 @@
+.app-button {
+  padding: 8px 20px;
+  background: transparent;
+  border-radius: 25px !important;
+  border: 2px solid $primary!important;
+  transition: 0.25s!important;
+  margin: 0 4px!important;
+
+  &:hover, &:focus {
+    background: $primary;
+   // border: 2px solid $primary;
+    color: $on-primary;
+  }
+}

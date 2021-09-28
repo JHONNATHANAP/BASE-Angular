@@ -1,0 +1,17 @@
+<mat-sidenav-container>
+    <mat-sidenav #menu role="navigation" [mode]="sideMode">
+
+        <app-menu-list (menuToggle)="menu.close()" (signOut)="onSignOut()" [isAuthorized]="isAuthorized$ | async"
+            [user]="user$ | async"></app-menu-list>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+
+        <app-header (signOut)="onSignOut()" (menuClicked)="menu.toggle()" [isAuthorized]="isAuthorized$ | async"
+            [user]="user$ | async"></app-header>
+
+        <router-outlet></router-outlet>
+        
+    </mat-sidenav-content>
+</mat-sidenav-container>
