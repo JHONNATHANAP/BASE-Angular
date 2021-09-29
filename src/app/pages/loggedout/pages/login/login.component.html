@@ -1,1 +1,42 @@
-<p>login works!</p>
+<div class="app-page full-page">
+    <div class="app-page__header">
+        <img class="logo" src="../../../assets/img/Logo-ATTA-RGB.jpg" alt="">
+    </div>
+    <div class="app-page__content">
+        <div class="login-card">
+            <div class="user-icon">
+                <span class="material-icons-outlined">
+                    account_circle
+                </span>
+            </div>
+            <h2 class="login-title">Autenticación de usuario</h2>
+            <div class="login-form">
+                <form [formGroup]="form" (submit)="onSubmit()" (keyup.enter)="onSubmit()" novalidate autocomplete="off">
+                    <app-form-field [required]="true" [control]="form.controls.email" [isInline]="false"
+                        [patternError]="regexErrors.email">
+                        <app-material-input placeholder="Usuario" formControlName="email"></app-material-input>
+                    </app-form-field>
+
+                    <app-form-field [required]="true" [control]="form.controls.password" [isInline]="false"
+                        [patternError]="regexErrors.password">
+                        <app-material-input type="password" placeholder="Clave" formControlName="password"></app-material-input>
+                    </app-form-field>
+                    <app-button type="submit">Iniciar sesión</app-button>
+                </form>
+            </div>
+            <div class="options">
+                <a class="app-a">
+                    <span class="material-icons-outlined">
+                        file_download
+                        </span>
+                        Descargar Manual
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <div class="app-page__footer">
+
+    </div>
+    <app-spinner *ngIf="loading$ | async"></app-spinner>
+</div>

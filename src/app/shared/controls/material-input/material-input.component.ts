@@ -22,6 +22,7 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 })
 export class MaterialInputComponent implements OnInit, ControlValueAccessor {
   @Input() placeholder: string="";
+  @Input() type: string="text";
   @Output() changed = new EventEmitter<string>();
 
   value: string = '';

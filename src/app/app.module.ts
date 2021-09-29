@@ -21,6 +21,7 @@ import {ButtonModule} from '@app/shared/buttons';
 import { MenuListComponent } from './components/menu-list/menu-list.component';
 import {MatListModule} from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClientModule } from '@angular/common/http';
 
 const APP_DATE_FORMATS: MatDateFormats = {
     parse: {
@@ -52,9 +53,10 @@ const APP_DATE_FORMATS: MatDateFormats = {
         strictStateImmutability: true
       }
     }),
-    //EffectsModule.forRoot(effects),
+    EffectsModule.forRoot(effects),
     StoreDevtools,
-    NotificationModule.forRoot()
+    NotificationModule.forRoot(),
+    HttpClientModule
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'en-GB'},

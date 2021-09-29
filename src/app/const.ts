@@ -1,8 +1,14 @@
+import { environment } from "@src/environments/environment"
+
 export const routesPath = {
     loggedin: {
-        path:'loggedin',
+        path:'in',
         exampleList: 'examplelist',
         exampleForm: 'example-form'
+    },
+    loggedout: {
+        path:'out',
+        login: 'login'
     },
     demo:{
         path:'demo',
@@ -12,4 +18,9 @@ export const routesPath = {
     static:{
         path:'static',
     }
+}
+
+export const apiUrls={
+    api:environment.url,
+    login:"/login"
 }

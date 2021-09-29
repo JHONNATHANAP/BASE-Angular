@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { LoggedoutRoutingModule } from './loggedout-routing.module';
 import { LoggedoutComponent } from './loggedout.component';
-
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,8 @@ import { LoggedoutComponent } from './loggedout.component';
   ],
   imports: [
     CommonModule,
-    LoggedoutRoutingModule
+    LoggedoutRoutingModule,
+    MatIconModule
   ]
 })
 export class LoggedoutModule { }

@@ -20,11 +20,14 @@ const routes: Routes = [
         path:  routesPath.loggedin.path,
         loadChildren: () => import('./pages/loggedin/loggedin.module').then( m => m.LoggedinModule)
       },  
-    
+      {
+        path:  routesPath.loggedout.path,
+        loadChildren: () => import('./pages/loggedout/loggedout.module').then( m => m.LoggedoutModule)
+      }, 
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'static/welcome'
+        redirectTo:`${routesPath.loggedout.path}/${routesPath.loggedout.login}`
       },
     ]
   },

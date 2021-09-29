@@ -3,7 +3,10 @@
   transition: 0.25s;
   cursor: pointer;
   margin-right: 1em;
-
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
   &:hover{
     color: $primary-dark;
   }

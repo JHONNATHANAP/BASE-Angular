@@ -10,10 +10,10 @@
               <ng-container *ngIf="control && errorKey" [ngSwitch]="errorKey">
                     <span *ngSwitchCase="'min'">Minimo {{control.errors ? control.errors[errorKey].min : 0}}</span>
                     <span *ngSwitchCase="'max'">Maximo {{control.errors ? control.errors[errorKey].max : 100000}}</span>
-                    <span *ngSwitchCase="'required'">Este caja de texto es obligatoria</span>
-                    <span *ngSwitchCase="'requiredtrue'">Este caja de texto es obligatoria</span>
-                    <span *ngSwitchCase="'minlength'">cantidad de caracteres minima {{control.errors ? control.errors[errorKey].requiredLength : 0}}</span>
-                    <span *ngSwitchCase="'maxlength'">cantidad de caracteres maxima {{control.errors ? control.errors[errorKey].requiredLength : 0}}</span>
+                    <span *ngSwitchCase="'required'">Este campo es obligatorio</span>
+                    <span *ngSwitchCase="'requiredtrue'">Este campo es obligatorio</span>
+                    <span *ngSwitchCase="'minlength'">Debe contener mínimo {{control.errors ? control.errors[errorKey].requiredLength : 0}} caracteres</span>
+                    <span *ngSwitchCase="'maxlength'">Debe contener máximo {{control.errors ? control.errors[errorKey].requiredLength : 0}} caracteres</span>
                     <span *ngSwitchCase="'pattern'">
                       <span *ngIf="patternError">{{patternError}}</span>
                       <span *ngIf="!patternError">La expresion regular no tiene coincidencia</span>
