@@ -2,13 +2,121 @@
   padding: 8px 20px;
   background: transparent;
   border-radius: 25px !important;
-  border: 2px solid $primary!important;
+  border:1px solid $primary !important;
   transition: 0.25s!important;
   margin: 0 4px!important;
 
   &:hover, &:focus {
-    background: $primary;
-   // border: 2px solid $primary;
-    color: $on-primary;
+    background: $primary-dark !important;
+    border:1px solid $primary-dark !important;
+    color: $on-primary !important;
+
+    &.primary{
+      background: $primary-dark !important;
+      border:1px solid $primary-dark !important;
+      color: $on-primary !important;
+    }
+
+    &.secondary{
+      background: $secondary-dark !important;
+      border:1px solid $secondary-dark !important;
+      color: $on-secondary !important;
+    }
+
+    &.success{
+      background: $success-dark !important;
+      border:1px solid $success-dark !important;
+      color: $on-success !important;
+    }
+
+    &.error{
+      background: $error-dark !important;
+      border:1px solid $error-dark !important;
+      color: $on-error !important;
+    }
+
+    &.outline-primary {
+      background: $primary-dark !important;
+      border:1px solid $primary-dark !important;
+      color: $on-primary !important;
+    }
+    &.outline-secondary {
+      background: $secondary-dark !important;
+      border:1px solid $secondary-dark !important;
+      color: $on-secondary !important;
+    }
+    &.outline-success {
+      background: $success-dark !important;
+      border:1px solid $success-dark !important;
+      color: $on-success !important;
+    }
+    &.outline-error {
+      background: $error-dark !important;
+      border:1px solid $error-dark !important;
+      color: $on-error !important;
+    }
+
   }
+
+
+  &.primary{
+    background: $primary!important;
+    color: $on-primary!important;
+    border:1px solid $primary !important;
+  }
+
+  &.secondary{
+    background: $secondary!important;
+    color: $on-secondary!important;
+    border:1px solid $secondary !important;
+  }
+
+
+  &.error{
+    background: $error!important;
+    color: $on-error!important;
+    border:1px solid $error !important;
+  }
+
+  &.success{
+    background: $success !important;
+    color: $on-success !important;
+    border:1px solid $success !important;
+  }
+
+  
+
+
+  &.outline-primary{
+    border:1px solid $primary !important;
+    background-color:$on-primary !important;
+    color: $primary!important;
+  }
+
+ 
+
+  &.outline-secondary{
+    border:1px solid $secondary !important;
+    background-color:$on-secondary !important;
+    color: $secondary!important;
+  }
+
+ 
+
+  &.outline-success{
+    border:1px solid $success !important;
+    background-color:$on-success !important;
+    color: $success!important;
+  }
+
+  
+
+  &.outline-error{
+    border:1px solid $error !important;
+    background-color:$on-error !important;
+    color: $error!important;
+  }
+
+ 
+
 }
