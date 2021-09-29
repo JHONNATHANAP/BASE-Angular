@@ -5,10 +5,15 @@ import { regexErrors, regex, markFormGroupTouched } from '@app/shared/utils';
 import { Observable } from 'rxjs';
 import * as fromRoot from '@app/store';
 import * as fromUser from '@app/store/user';
+import { fadeInOnEnterAnimation, fadeOutOnLeaveAnimation,fadeInUpOnEnterAnimation } from 'angular-animations';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  animations: [
+    fadeInUpOnEnterAnimation({duration: 700}),
+    fadeOutOnLeaveAnimation()
+  ]
 })
 export class LoginComponent implements OnInit {
   form !: FormGroup;
