@@ -5,9 +5,9 @@
 
 <h2>Actions</h2>
 <div class="fl-col">
-  <app-button (click)="onToggleSpinner()" class="pt-5">Toggle Spinner</app-button>
-  <app-button (click)="onError()" class="pt-5">Error</app-button>
-  <app-button (click)="onSuccess()" class="pt-5">Success</app-button>
+  <app-button (onClick)="onToggleSpinner()" [class]="'outline-primary'" class="pt-5">Toggle Spinner</app-button>
+  <app-button (onClick)="onError()" [class]="'secondary'"  class="pt-5">Error</app-button>
+  <app-button (onClick)="onSuccess()" [class]="'success'" class="pt-5">Success</app-button>
 </div>
 <br /><br /><br />
 
@@ -19,9 +19,9 @@
 
   <form [@fadeInOnEnter] [formGroup]="form" novalidate autocomplete="off" (ngSubmit)="onSubmit()">
     <app-button type="submit">Submit</app-button>
-    <app-button (click)="organizarElemento()">Organizar</app-button>
-    <app-button (click)="onPatchValue()">Agregar Texto</app-button>
-    <app-button (click)="onToggleDisabled()">Disabled</app-button>
+    <app-button (onClick)="organizarElemento()">Organizar</app-button>
+    <app-button (onClick)="onPatchValue()">Agregar Texto</app-button>
+    <app-button (onClick)="onToggleDisabled()">Disabled</app-button>
     <br /><br />
 
     <app-form-field label="Input Vaxi" [required]="true" [control]="form.controls.input" [isInline]="isInline"
