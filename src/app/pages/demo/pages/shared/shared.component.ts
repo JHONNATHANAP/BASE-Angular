@@ -1,16 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import {  FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {regex, regexErrors, markFormGroupTouched} from '@app/shared/utils';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { regex, regexErrors, markFormGroupTouched } from '@app/shared/utils';
 
-import {ControlItem} from '@app/models/frontend';
+import { ControlItem } from '@app/models/frontend';
 
-import {NotificationService} from '@app/services';
+import { NotificationService } from '@app/services';
+import { fadeInOnEnterAnimation, fadeOutOnLeaveAnimation } from 'angular-animations';
 
 
 @Component({
   selector: 'app-shared',
   templateUrl: './shared.component.html',
-  styleUrls: ['./shared.component.scss']
+  styleUrls: ['./shared.component.scss'],
+  animations: [
+    fadeInOnEnterAnimation({duration: 2000}),
+    fadeOutOnLeaveAnimation()
+  ]
 })
 export class SharedComponent implements OnInit {
   form!: FormGroup;
@@ -22,14 +27,14 @@ export class SharedComponent implements OnInit {
   showSpinner = false;
 
   constructor(private fb: FormBuilder, private notification: NotificationService) {
-      this.isInline = true;
-      this.items = [
-        { label: 'Uno', value: 1},
-        { label: 'Dos', value: 2},
-        { label: 'Tres', value: 3},
-        { label: 'Cuatro', value: 4},
-        { label: 'Cinco', value: 5},
-      ]
+    this.isInline = true;
+    this.items = [
+      { label: 'Uno', value: 1 },
+      { label: 'Dos', value: 2 },
+      { label: 'Tres', value: 3 },
+      { label: 'Cuatro', value: 4 },
+      { label: 'Cinco', value: 5 },
+    ]
 
 
   }
@@ -97,45 +102,45 @@ export class SharedComponent implements OnInit {
       radios: 4,
       date: new Date().getTime(),
       dateRange: {
-        from: new Date(2022,5,10).getTime(),
-        to: new Date(2022,11,10).getTime(),
+        from: new Date(2022, 5, 10).getTime(),
+        to: new Date(2022, 11, 10).getTime(),
       }
     });
   }
 
-  onSubmit(): void{
+  onSubmit(): void {
 
-    if(!this.form.valid){
+    if (!this.form.valid) {
       markFormGroupTouched(this.form);
     }
 
   }
-  organizarElemento(){
+  organizarElemento() {
     this.isInline = !this.isInline;
   }
 
   onToggleDisabled(): void {
-    if(this.form.enabled){
+    if (this.form.enabled) {
       this.form.disable();
-    }else{
+    } else {
       this.form.enable();
     }
   }
 
-  onToggleSpinner(): void{
+  onToggleSpinner(): void {
     this.showSpinner = !this.showSpinner;
   }
 
-  onSuccess(): void{
+  onSuccess(): void {
     this.notification.success("El procedimiento fue exitoso");
   }
 
-  onError(): void{
+  onError(): void {
     this.notification.error("Se encontraron errores en el proceso");
   }
 
   onFilesChanged(urls: string | string[]): void {
-      console.log('urls', urls) ;
+    console.log('urls', urls);
   }
 
 }
