@@ -15,7 +15,12 @@ const routes: Routes = [
       {
         path: routesPath.loggedin.exampleForm,
         loadChildren: () => import('./pages/example-form/example-form.module').then(m=>m.ExampleFormModule)
+      },
+      {
+        path: routesPath.loggedin.userProfiles,
+        loadChildren: () => import('./pages/user-profiles/user-profiles.module').then(m=>m.UserProfilesModule)
       }  
+
     ]
   }
 

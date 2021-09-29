@@ -4,7 +4,8 @@ export const routesPath = {
     loggedin: {
         path:'in',
         exampleList: 'examplelist',
-        exampleForm: 'example-form'
+        exampleForm: 'example-form',
+        userProfiles:'profiles'
     },
     loggedout: {
         path:'out',

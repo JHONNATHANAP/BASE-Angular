@@ -11,6 +11,16 @@
   </a>
 
 
+  <a *ngIf="!isAuthorized" mat-list-item routerLink="auth/registration" (click)="closeMenu()">
+    <mat-icon>how_to_register</mat-icon>
+    <span class="navegation-list-label">Registrar</span>
+  </a>
+
+  <a mat-list-item routerLink="shop" (click)="closeMenu()">
+    <mat-icon>store</mat-icon>
+    <span class="navegation-list-label">Tienda</span>
+  </a>
+
   <a mat-list-item routerLink="demo" (click)="closeMenu()">
     <mat-icon>contact_support</mat-icon>
     <span class="navegation-list-label">Contacto</span>

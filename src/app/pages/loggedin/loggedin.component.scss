@@ -1,8 +1,11 @@
-mat-sidenav-container,
+//mat-sidenav-container,
 mat-sidenav-content,
 mat-sidenav,
 mat-nav-list {
     height: 100%;
+}
+mat-sidenav-container{
+    height: calc(100% - 160px);
 }
 
 mat-sidenav {

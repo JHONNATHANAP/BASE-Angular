@@ -36,19 +36,5 @@
       justify-content: center;
     }
   }
-  &.full-page-nav {
-    margin: 0px !important;
-    max-width: none !important;
-    border-radius: 0px !important;
-    min-height: calc(100% - 100px) !important;
-    .app-page__footer {
-      position: absolute !important;
-      bottom: 0px !important;
-      margin-top:0px !important;
-      width: 100% !important;
-      right: 0;
-      left: 0;
-      justify-content: center;
-    }
-  }
+
 }
