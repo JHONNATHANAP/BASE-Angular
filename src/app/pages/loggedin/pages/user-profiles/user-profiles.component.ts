@@ -9,6 +9,12 @@ export class UserProfilesComponent implements OnInit {
 
   constructor() { }
 
+  options=[
+    {id:1,title:"Jefe de unidad administradora"},
+    {id:2,title:"Jefe Dept. Informática"},
+    {id:3,title:"Usuario Abastecimiento"},
+  ]
+
   ngOnInit(): void {
   }
 
