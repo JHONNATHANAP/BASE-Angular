@@ -8,6 +8,7 @@
 .card {
   @include card;
   width: fit-content;
+  padding: 40px;
 
 }
 .app-page{
@@ -16,8 +17,6 @@
     height: 100%;
 
 }
-.options{
-  button{
-    width: 100% !important;
-  }
+.option{
+  min-width: 400px !important;
 }
