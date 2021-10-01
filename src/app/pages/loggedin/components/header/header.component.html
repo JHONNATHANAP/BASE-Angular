@@ -13,11 +13,13 @@
   </div>
 
 
-  <div class="header__title">
-    <span class="material-icons-outlined icons md-36">
-      person
+  <div *ngIf="loggedin$ | async as log" class="header__title">
+    <span class="{{log.view.icon.class }}">
+      {{log.view.icon.name }}
     </span>
-    <h3 class="title">Seleccione uno de los perfiles</h3>
+    <h3 class="title">
+      <div > {{log.view.title }}</div>
+     </h3>
   </div>
 
 </div>

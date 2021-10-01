@@ -5,7 +5,8 @@ export const routesPath = {
         path:'in',
         exampleList: 'examplelist',
         exampleForm: 'example-form',
-        userProfiles:'profiles'
+        userProfiles:'profiles',
+        toDoMailbox:'todomailbox'
     },
     loggedout: {
         path:'out',

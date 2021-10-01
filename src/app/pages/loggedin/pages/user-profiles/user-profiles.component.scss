@@ -1,15 +1,12 @@
 @import "styles/mixins";
 
 .shadow {
-  @include shadow;
   padding: 20px;
 }
 
 .card {
-  @include card;
   width: fit-content;
   padding: 40px;
-
 }
 .app-page{
     display: flex;
@@ -19,4 +16,10 @@
 }
 .option{
   min-width: 400px !important;
+}
+
+@media only screen and (max-width: 800px) {
+  .option{
+    min-width:fit-content !important;
+  }
 }

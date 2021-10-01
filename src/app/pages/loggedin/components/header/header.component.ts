@@ -1,6 +1,11 @@
 import { ChangeDetectionStrategy, Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { View } from '@app/models/frontend';
 import { UserResponse } from '@app/store/user';
-
+import { Store,select } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import * as fromRoot from '../../store';
+import * as fromLoggedin from '../../store/loggedin';
+import { Loggedin } from '../../store/loggedin';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -13,12 +18,13 @@ export class HeaderComponent implements OnInit {
   @Input() user !: UserResponse | null;
 
   @Output() signOut = new EventEmitter<void>();
+  loggedin$!: Observable<Loggedin>;
 
-
-  constructor(
-  ) { }
+  constructor(private store: Store<fromRoot.State>) { }
 
   ngOnInit(): void {
+ 
+    this.loggedin$=this.store.pipe(select(fromLoggedin.getLoggedin))as Observable<Loggedin>;
   }
 
   onClicked() : void {

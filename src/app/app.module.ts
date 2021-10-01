@@ -22,7 +22,7 @@ import { MenuListComponent } from './components/menu-list/menu-list.component';
 import {MatListModule} from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
-
+import {AngularFireModule  } from '@angular/fire/compat';
 const APP_DATE_FORMATS: MatDateFormats = {
     parse: {
       dateInput: { day: 'numeric', month: 'numeric', year: 'numeric'},
@@ -45,8 +45,7 @@ const APP_DATE_FORMATS: MatDateFormats = {
     BrowserAnimationsModule,
     MatNativeDateModule,
     FlexLayoutModule,
-
-
+    AngularFireModule.initializeApp(environment.firebase),
     StoreModule.forRoot(reducers, {
       runtimeChecks: {
         strictActionImmutability: true,

@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import * as fromRoot from '@app/store';
 import * as fromUser from '@app/store/user';
 import { fadeInOnEnterAnimation, fadeOutOnLeaveAnimation,fadeInUpOnEnterAnimation } from 'angular-animations';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -21,7 +22,8 @@ export class LoginComponent implements OnInit {
   loading$ !: Observable<boolean | null>;
   constructor(
     private fb: FormBuilder,
-    private store: Store<fromRoot.State>
+    private store: Store<fromRoot.State>,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -61,8 +63,8 @@ export class LoginComponent implements OnInit {
         email: value.email,
         password: value.password,
       }
-
-      this.store.dispatch(new fromUser.SignInEmail(userLoginRequest));
+      this.router.navigate(['/in/profiles']);
+     // this.store.dispatch(new fromUser.SignInEmail(userLoginRequest));
 
     } else {
       markFormGroupTouched(this.form);

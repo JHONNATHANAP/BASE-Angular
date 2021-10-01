@@ -9,6 +9,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { ButtonModule } from '@app/shared';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './store';
+import { ToDoMailboxModule } from './pages/to-do-mailbox/to-do-mailbox.module';
+import { UserProfilesModule } from './pages/user-profiles/user-profiles.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    ButtonModule,
+    ButtonModule,    
+    StoreModule.forFeature('loggedin',reducers),
+
+    ToDoMailboxModule,
+    UserProfilesModule
   ]
 })
 export class LoggedinModule { }

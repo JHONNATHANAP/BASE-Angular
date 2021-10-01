@@ -28,6 +28,7 @@ export class UserEffects {
       ofType(fromActions.Types.SIGN_UP_EMAIL),
       map((action: fromActions.SignUpEmail) => action.user),
       switchMap(userData =>
+
         this.httpClient.post<UserResponse>(`${apiUrls.api}/api/Usuario/Registrar`, userData)
           .pipe(
             tap((response: UserResponse) => {

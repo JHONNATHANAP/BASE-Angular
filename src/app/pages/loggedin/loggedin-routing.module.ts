@@ -19,7 +19,11 @@ const routes: Routes = [
       {
         path: routesPath.loggedin.userProfiles,
         loadChildren: () => import('./pages/user-profiles/user-profiles.module').then(m=>m.UserProfilesModule)
-      }  
+      },
+      {
+        path: routesPath.loggedin.toDoMailbox,
+        loadChildren: () => import('./pages/to-do-mailbox/to-do-mailbox-routing.module').then(m=>m.ToDoMailboxRoutingModule)
+      }    
 
     ]
   }
