@@ -33,60 +33,55 @@ export class ToDoMailboxComponent implements OnInit {
     this.form = this.fb.group({
       folio: [null, {
         updateOn: 'change',
-         validators: [
-         
+        validators: [
+
           Validators.maxLength(128)
         ]
       }],
-      password: [null, {
-        updateOn: 'change',
-         validators: [
-]
-      }],
       area: [null, {
         updateOn: 'change',
-         validators: [
-]
+        validators: [
+        ]
       }],
       documentType: [null, {
         updateOn: 'change',
-         validators: [
-]
+        validators: [
+        ]
       }],
       categoria: [null, {
         updateOn: 'change',
-         validators: [
-]
+        validators: [
+        ]
       }],
       clasificacion: [null, {
         updateOn: 'change',
-         validators: [
-]
+        validators: [
+        ]
       }],
       range: [null, {
         updateOn: 'change',
-         validators: [
-]
+        validators: [
+        ]
       }],
       usuario: [null, {
         updateOn: 'change',
-         validators: [
-]
+        validators: [
+        ]
       }],
       rol: [null, {
         updateOn: 'change',
-         validators: [
-]
+        validators: [
+        ]
       }],
       asunto: [null, {
         updateOn: 'change',
-         validators: [
-]
+        validators: [
+        ]
       }],
       glosa: [null, {
         updateOn: 'change',
-         validators: [
-]
+        validators: [
+        ]
       }],
     })
     const loggedin: fromLoggedin.Loggedin = {
@@ -94,7 +89,7 @@ export class ToDoMailboxComponent implements OnInit {
     }
     this.store.dispatch(new fromLoggedin.Change(loggedin));
   }
-  onSubmit(){
+  onSubmit() {
 
   }
 

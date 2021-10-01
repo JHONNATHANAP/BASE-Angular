@@ -35,18 +35,14 @@ export class LoginComponent implements OnInit {
          validators: [
           Validators.required,
           Validators.maxLength(128),
-         // Validators.pattern(regex.email)
         ]
       }],
-
-
       password: [null, {
         updateOn: 'change',
          validators: [
           Validators.required,
           Validators.minLength(6),
           Validators.maxLength(30),
-          //Validators.pattern(regex.password)
         ]
       }],
     })
