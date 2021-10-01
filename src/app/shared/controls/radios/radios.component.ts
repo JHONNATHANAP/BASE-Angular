@@ -19,10 +19,11 @@ export {ControlItem, Value} from '@app/models/frontend';
 })
 export class RadiosComponent implements OnInit, ControlValueAccessor {
 
-  value!:  Value;
+  checkValue!:  Value;
   isDisabled!: boolean;
-
-  @Input() items!: ControlItem[];
+  @Input() label!: string;
+  @Input() value!: string;
+  @Input() items!: any[];
   @Output() changed = new EventEmitter<Value>();
 
   constructor() { }
@@ -32,8 +33,8 @@ export class RadiosComponent implements OnInit, ControlValueAccessor {
 
   private propagateChange:any =()=>{}
 
-  writeValue(value: Value): void{
-    this.value = value;
+  writeValue(checkValue: Value): void{
+    this.checkValue = checkValue;
   }
 
   registerOnChange(fn: any): void{
@@ -46,14 +47,14 @@ export class RadiosComponent implements OnInit, ControlValueAccessor {
     this.isDisabled = isDisabled;
   }
 
-  onChanged(value: Value): void{
-    this.value = value;
-    this.propagateChange(value);
-    this.changed.emit(value);
+  onChanged(checkValue: Value): void{
+    this.checkValue = checkValue;
+    this.propagateChange(checkValue);
+    this.changed.emit(checkValue);
   }
 
-  isChecked(value: Value): boolean{
-    return this.value === value;
+  isChecked(checkValue: Value): boolean{
+    return this.checkValue === checkValue;
   }
 
 

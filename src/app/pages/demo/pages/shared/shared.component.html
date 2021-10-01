@@ -39,7 +39,7 @@
     </app-form-field>
 
     <app-form-field label="Select" [required]="true" [control]="form.controls.select" [isInline]="isInline">
-      <app-select formControlName="select" [items]="items"></app-select>
+      <app-select placeholder="Select"  label="label" value="value" formControlName="select" [items]="items"></app-select>
     </app-form-field>
 
     <app-form-field label="Checkboxes" [required]="true" [control]="form.controls.checkboxes" [isInline]="isInline">
@@ -47,7 +47,7 @@
     </app-form-field>
 
     <app-form-field label="Radios" [required]="true" [control]="form.controls.radios" [isInline]="isInline">
-      <app-radios formControlName="radios" [items]="items"></app-radios>
+      <app-radios label="label" value="value" formControlName="radios" [items]="items"></app-radios>
     </app-form-field>
 
     <app-form-field label="Date" [required]="true" [control]="form.controls.date" [isInline]="isInline">

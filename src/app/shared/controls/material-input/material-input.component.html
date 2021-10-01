@@ -1,11 +1,4 @@
-<!-- <input type="text"
-  class="app-input"
-  [value] ="value"
-  [placeholder] = "placeholder || ''"
-  [attr.disabled] = "isDisabled ? true : null"
-  (keyup) = "onKeyup($event)"
-  (blur) = "onBlur()"
-> -->
+
 <mat-form-field  appearance="outline">
   <mat-label  >{{placeholder || ''}}</mat-label>
   <input [type]="type"    [value] ="value" (keyup) = "onKeyup($event)"   (blur) = "onBlur()"   [value] ="value" matInput [placeholder]="placeholder || ''">
