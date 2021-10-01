@@ -1,21 +1,34 @@
 <div class="app-page full-page fl-justify-center">
 
-    <div class="app-page__content  ">
-        <div class="form">
+    <div class="app-page__content fl-justify-center w-100">
+        <div class="form w-60">
             <form [formGroup]="form" (submit)="onSubmit()" (keyup.enter)="onSubmit()" novalidate autocomplete="off">
-                <app-form-field [required]="true" [control]="form.controls.email" [isInline]="false"
-                    >
-                    <app-material-input placeholder="Usuario" formControlName="email"></app-material-input>
-                </app-form-field>
-
-                <app-form-field [required]="true" [control]="form.controls.password" [isInline]="false"
-                   >
-                    <app-material-input type="password" placeholder="Clave" formControlName="password"></app-material-input>
-                </app-form-field>
+                <div class="fl-row">
+                    <app-form-field class="pl-5 pr-5 w-50" [required]="true" [control]="form.controls.email" [isInline]="false">
+                        <app-material-input placeholder="Usuario" formControlName="email"></app-material-input>
+                    </app-form-field>
+    
+                    <app-form-field class="pl-5 pr-5 w-50" [required]="true" [control]="form.controls.password" [isInline]="false">
+                        <app-material-input type="password" placeholder="Clave" formControlName="password">
+                        </app-material-input>
+                    </app-form-field>
+            
+                </div>
+                <div class="fl-row">
+                    <app-form-field class="pl-5 pr-5 w-50" [required]="true" [control]="form.controls.email" [isInline]="false">
+                        <app-material-input placeholder="Usuario" formControlName="email"></app-material-input>
+                    </app-form-field>
+    
+                    <app-form-field class="pl-5 pr-5 w-50" [required]="true" [control]="form.controls.password" [isInline]="false">
+                        <app-material-input type="password" placeholder="Clave" formControlName="password">
+                        </app-material-input>
+                    </app-form-field>         
+                </div>
                 <div>
-                    <app-form-field  [required]="true" [control]="form.controls.area" >
-                        <app-checkboxes label="title" value="id" formControlName="area" [items]="options"></app-checkboxes>
-                      </app-form-field>
+                    <app-form-field [required]="true" [control]="form.controls.area">
+                        <app-checkboxes label="title" value="id" formControlName="area" [items]="options">
+                        </app-checkboxes>
+                    </app-form-field>
                 </div>
                 <app-button [class]="'secondary'" type="submit">Buscar</app-button>
             </form>
