@@ -18,11 +18,13 @@ export {ControlItem, Value} from '@app/models/frontend';
 })
 export class SelectComponent implements OnInit, ControlValueAccessor {
 
-  @Input() items!: ControlItem[];
+  @Input() items!: any[];
   @Input() placeholder!: string;
+  @Input() label!: string;
+  @Input() value!: string;
   @Output() changed = new EventEmitter<Value>();
 
-  value!: Value;
+  selectValue!: Value;
   isDisabled!: boolean;
 
 
@@ -34,8 +36,8 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
   private propagateChange: any = () => {}
   private propagateTouched: any = () => {}
 
-  writeValue(value: Value): void{
-    this.value = value;
+  writeValue(selectValue: Value): void{
+    this.selectValue = selectValue;
   }
 
   registerOnChange(fn: any): void{
@@ -51,10 +53,10 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
   }
 
   onChanged(event: MatSelectChange): void{
-    const value = event.value ? event.value : null;
-    this.value = value;
-    this.propagateChange(value);
-    this.changed.emit(value);
+    const selectValue = event.value ? event.value : null;
+    this.selectValue = selectValue;
+    this.propagateChange(selectValue);
+    this.changed.emit(selectValue);
   }
 
   onBlur(): void {

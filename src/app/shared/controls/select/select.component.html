@@ -1,7 +1,23 @@
-<div class="select app-input" [class.select_disabled]="isDisabled">
+<!-- <div class="" [class.select_disabled]="isDisabled">
+  <mat-form-field appearance="outline">
     <mat-select [value]="value" [disabled]="isDisabled" (selectionChange)="onChanged($event)" (blur)="onBlur()">
-      <mat-option *ngFor="let item of items" [value]="item.value">
-          {{item.label}}
+      <mat-option *ngFor="let item of items" [value]="item[value]">
+        {{item[label]}}
       </mat-option>
     </mat-select>
+  </mat-form-field>
+
 </div>
+ -->
+<mat-form-field appearance="outline">
+  <mat-label>
+    {{placeholder || ''}}
+   <!--  <mat-icon>favorite</mat-icon> <b> Fancy</b> <i> label</i> -->
+  </mat-label>
+  <mat-select [value]="value" [disabled]="isDisabled" (selectionChange)="onChanged($event)" (blur)="onBlur()">
+    <mat-option *ngFor="let item of items" [value]="item[value]">
+      {{item[label]}}
+    </mat-option>
+  </mat-select>
+
+</mat-form-field>
