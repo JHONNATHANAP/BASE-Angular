@@ -2,30 +2,63 @@
 
     <div class="app-page__content fl-justify-center w-100">
         <div class="form w-60">
+
             <form [formGroup]="form" (submit)="onSubmit()" (keyup.enter)="onSubmit()" novalidate autocomplete="off">
+
+
                 <div class="fl-row">
-                    <app-form-field class="pl-5 pr-5 w-50" [required]="true" [control]="form.controls.email" [isInline]="false">
-                        <app-material-input placeholder="Usuario" formControlName="email"></app-material-input>
+                    <app-form-field class="pr-10 w-50" [control]="form.controls.folio">
+                        <app-material-input placeholder="Número de folio" formControlName="folio"></app-material-input>
                     </app-form-field>
-    
-                    <app-form-field class="pl-5 pr-5 w-50" [required]="true" [control]="form.controls.password" [isInline]="false">
-                        <app-material-input type="password" placeholder="Clave" formControlName="password">
-                        </app-material-input>
+
+                    <app-form-field class="pl-10 w-50" [control]="form.controls.documentType">
+                        <app-select placeholder="Tipo del Documento" label="label" value="value"
+                            formControlName="documentType" [items]="options" label="title" value="id"></app-select>
                     </app-form-field>
-            
+
                 </div>
+
+
                 <div class="fl-row">
-                    <app-form-field class="pl-5 pr-5 w-50" [required]="true" [control]="form.controls.email" [isInline]="false">
-                        <app-material-input placeholder="Usuario" formControlName="email"></app-material-input>
+                    <app-form-field class="pr-10 w-50" [control]="form.controls.categoria">
+                        <app-select placeholder="Categoría del documento" label="label" value="value"
+                            formControlName="categoria" [items]="options" label="title" value="id"></app-select>
                     </app-form-field>
-    
-                    <app-form-field class="pl-5 pr-5 w-50" [required]="true" [control]="form.controls.password" [isInline]="false">
-                        <app-material-input type="password" placeholder="Clave" formControlName="password">
-                        </app-material-input>
-                    </app-form-field>         
+
+                    <app-form-field class="pl-10 w-50" [control]="form.controls.clasificacion">
+                        <app-select placeholder="Clasificación del Documento" label="label" value="value"
+                            formControlName="clasificacion" [items]="options" label="title" value="id"></app-select>
+                    </app-form-field>
                 </div>
+
+
+                <div class="fl-row">
+                    <app-form-field class=" pr-10 w-50" [control]="form.controls.range">
+                        <app-date-range formControlName="range"></app-date-range>
+                    </app-form-field>
+
+                    <app-form-field class="pl-10 w-50" [control]="form.controls.usuario">
+                        <app-material-input placeholder="Usuario" formControlName="usuario"></app-material-input>
+                    </app-form-field>
+                </div>
+
+                <app-form-field class="pr-10 w-50" [control]="form.controls.rol">
+                    <app-material-input placeholder="Rol" formControlName="rol"></app-material-input>
+                </app-form-field>
+
+                <app-form-field class="pr-10 w-50" [control]="form.controls.asunto">
+                    <app-material-input placeholder="Asunto" formControlName="asunto"></app-material-input>
+                </app-form-field>
+
+                <app-form-field class="pr-10 w-50" [control]="form.controls.glosa">
+                    <app-material-input placeholder="Glosa" formControlName="glosa"></app-material-input>
+                </app-form-field>
+
+
+
+
                 <div>
-                    <app-form-field [required]="true" [control]="form.controls.area">
+                    <app-form-field [control]="form.controls.area">
                         <app-checkboxes label="title" value="id" formControlName="area" [items]="options">
                         </app-checkboxes>
                     </app-form-field>

@@ -31,28 +31,62 @@ export class ToDoMailboxComponent implements OnInit {
     //this.loading$ = this.store.pipe(select(fromUser.getLoading));
 
     this.form = this.fb.group({
-      email: [null, {
+      folio: [null, {
         updateOn: 'change',
          validators: [
-          Validators.required,
+         
           Validators.maxLength(128)
         ]
       }],
       password: [null, {
         updateOn: 'change',
          validators: [
-          Validators.required,
-          Validators.minLength(6),
-          Validators.maxLength(30)
-        ]
+]
       }],
       area: [null, {
         updateOn: 'change',
          validators: [
-          Validators.required,
-          Validators.minLength(6),
-          Validators.maxLength(30)
-        ]
+]
+      }],
+      documentType: [null, {
+        updateOn: 'change',
+         validators: [
+]
+      }],
+      categoria: [null, {
+        updateOn: 'change',
+         validators: [
+]
+      }],
+      clasificacion: [null, {
+        updateOn: 'change',
+         validators: [
+]
+      }],
+      range: [null, {
+        updateOn: 'change',
+         validators: [
+]
+      }],
+      usuario: [null, {
+        updateOn: 'change',
+         validators: [
+]
+      }],
+      rol: [null, {
+        updateOn: 'change',
+         validators: [
+]
+      }],
+      asunto: [null, {
+        updateOn: 'change',
+         validators: [
+]
+      }],
+      glosa: [null, {
+        updateOn: 'change',
+         validators: [
+]
       }],
     })
     const loggedin: fromLoggedin.Loggedin = {
