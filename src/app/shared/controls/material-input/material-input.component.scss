@@ -1,5 +1,8 @@
 @import "styles/colors";
-
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: $primary !important;
+  // opacity: 1!important;
+}
 :host-context(.form-field_error) {
   ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
     color: $error !important;
