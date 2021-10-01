@@ -22,9 +22,12 @@ export class ToDoMailboxComponent implements OnInit {
     private fb: FormBuilder,) { }
 
   options = [
-    { id: 1, title: "Jefe de unidad administradora" },
-    { id: 2, title: "Jefe Dept. Informática" },
-    { id: 3, title: "Usuario Abastecimiento" },
+    { id: 1, title: "Validacióna" },
+    { id: 2, title: "Visación" },
+    { id: 3, title: "Aprobación" },
+    { id: 3, title: "Recepción" },
+    { id: 3, title: "Gestor" },
+    { id: 3, title: "Pago" },
   ]
 
   ngOnInit(): void {
