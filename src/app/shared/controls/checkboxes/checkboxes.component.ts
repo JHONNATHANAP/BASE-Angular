@@ -17,10 +17,13 @@ export {ControlItem, Value} from '@app/models/frontend';
   ]
 })
 export class CheckboxesComponent implements OnInit, ControlValueAccessor {
-  value!: Value[];
+  checkValue!: Value[];
   isDisabled!: boolean;
 
-  @Input() items!: ControlItem[];
+  @Input() items!: any[];
+  @Input() label!: string;
+  @Input() value!: string;
+  @Input() class!: string;
   @Output() changed = new EventEmitter<Value[]>();
 
   constructor() { }
@@ -30,8 +33,8 @@ export class CheckboxesComponent implements OnInit, ControlValueAccessor {
 
   private propagateChange: any =() => {};
 
-  writeValue(value: Value[]): void{
-    this.value = value;
+  writeValue(checkValue: Value[]): void{
+    this.checkValue = checkValue;
   }
 
   registerOnChange(fn: any) : void{
@@ -46,25 +49,25 @@ export class CheckboxesComponent implements OnInit, ControlValueAccessor {
     this.isDisabled = isDisabled;
   }
 
-  onChanged(value: Value, checked: Event): void {
+  onChanged(checkValue: Value, checked: Event): void {
      const {target} = checked;
      const resultado = (target as HTMLInputElement).checked;
 
-     const selected = this.getSelected(value, resultado);
+     const selected = this.getSelected(checkValue, resultado);
 
-     this.value = selected;
+     this.checkValue = selected;
      this.propagateChange(selected);
      this.changed.emit(selected);
   }
 
-  private getSelected(value: Value, checked: boolean): Value[]{
-    const selected: Value[] = this.value ? [...this.value] : [];
+  private getSelected(checkValue: Value, checked: boolean): Value[]{
+    const selected: Value[] = this.checkValue ? [...this.checkValue] : [];
     if(checked){
-      if(!selected.includes(value)){
-        selected.push(value);
+      if(!selected.includes(checkValue)){
+        selected.push(checkValue);
       }
     }else{
-      const index = selected.indexOf(value);
+      const index = selected.indexOf(checkValue);
       selected.splice(index, 1);
     }
 
@@ -74,8 +77,8 @@ export class CheckboxesComponent implements OnInit, ControlValueAccessor {
 
 
 
-  isChecked(value: Value): boolean {
-    return this.value && this.value.includes(value);
+  isChecked(checkValue: Value): boolean {
+    return this.checkValue && this.checkValue.includes(checkValue);
   }
 
 }

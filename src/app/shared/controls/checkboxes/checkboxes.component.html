@@ -1,11 +1,11 @@
-<div class="checkboxes">
+<div class="checkboxes {{class}}">
     <div *ngFor="let item of items">
         <label class="checkbox" [class.checkbox_disabled]="isDisabled">
-            {{item.label}}
-            <input type="checkbox" class="checkbox__input" [value]="item.value"
+            {{item[label]}}
+            <input type="checkbox" class="checkbox__input" [value]="item[value]"
             [attr.disabled]="isDisabled ? true : null"
-            [checked]="isChecked(item.value)"
-            (change) = "onChanged(item.value, $event)"
+            [checked]="isChecked(item[value])"
+            (change) = "onChanged(item[value], $event)"
             >
             <span class="checkbox__checkmark"></span>
         </label>
