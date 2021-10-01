@@ -118,23 +118,23 @@
 
 .fl-al-item-center {
     display: flex !important;
-    justify-content: center !important;
+    justify-items: center !important;
 }
 .fl-al-item-start {
     display: flex !important;
-    justify-content: flex-start !important;
+    justify-items: flex-start !important;
 }
 .fl-al-item-end {
     display: flex !important;
-    justify-content: flex-end !important;
+    justify-items: flex-end !important;
 }
 .fl-al-item-stretch {
     display: flex !important;
-    justify-content: stretch !important;
+    justify-items: stretch !important;
 }
 .fl-al-item-baseline {
     display: flex !important;
-    justify-content: baseline !important;
+    justify-items: baseline !important;
 }
 
 //margin
