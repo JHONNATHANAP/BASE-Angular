@@ -23,6 +23,7 @@
     &:checked {
       &~.checkbox__checkmark {
         background-color: $primary;
+        border: 0px;
 
         &:after {
           display: block;
@@ -48,6 +49,7 @@
       width: 20px;
       border-radius: 4px;
       background-color: #eee;
+      border:1px solid $primary;
 
       &:after {
         content: "";
@@ -63,11 +65,13 @@
 
   &:hover {
     .checkbox__checkmark {
-      background-color: #ccc;
+      //background-color: #ccc;
+      border:2px solid $primary-dark;
     }
 
     .checkbox__input:checked ~ .checkbox__checkmark {
       background-color: $primary-dark ;
+      border: 0px;
     }
 
   }
