@@ -38,3 +38,18 @@
   }
 
 }
+.header {  
+  &__title{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 15px;
+    height: 60px;
+    background-color: $primary;
+    color:$on-primary;
+    .title{
+      margin: 0;
+    }
+  }
+}
