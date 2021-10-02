@@ -15,7 +15,8 @@ export const routesPath = {
     demo:{
         path:'demo',
         shared:'shared',
-        controls:'controls'
+        controls:'controls',
+        tables:'tables'
     },
     static:{
         path:'static',
