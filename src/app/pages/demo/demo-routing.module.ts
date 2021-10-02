@@ -18,12 +18,10 @@ const routes: Routes = [
           path:  routesPath.demo.controls,
           loadChildren: () => import('./pages/controls/controls.module').then(m=>m.ControlsModule)
         },
-     
-       /*  {
-          path: 'guards',
-          loadChildren: () => import('./pages/guards/guards.module').then(m=>m.GuardsModule),
-         // canLoad: [AuthGuard]
-        } */
+        {
+          path:  routesPath.demo.tables,
+          loadChildren: () => import('./pages/tables/tables.module').then(m=>m.TablasModule)
+        },
       ]
     }
 
