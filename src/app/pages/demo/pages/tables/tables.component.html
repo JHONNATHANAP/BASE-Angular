@@ -1,2 +1,8 @@
 <h3>Tabla</h3>
-<app-table [table]="table"></app-table>
+<app-table [table]="table">
+   <tr *ngFor="let item of table.data">
+       <td *ngFor="let col of table.columns">
+        {{item[col.columnDef]}}
+       </td>
+   </tr>
+</app-table>

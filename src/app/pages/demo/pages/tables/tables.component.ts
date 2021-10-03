@@ -18,23 +18,19 @@ export class TablesComponent implements OnInit {
     columns: [
       {
         columnDef: 'position',
-        header: 'No.',
-        cell: (element: PeriodicElement) => `${element.position}`
+        header: 'No.'
       },
       {
         columnDef: 'name',
-        header: 'Name',
-        cell: (element: PeriodicElement) => `${element.name}`
+        header: 'Name'
       },
       {
         columnDef: 'weight',
-        header: 'Weight',
-        cell: (element: PeriodicElement) => `${element.weight}`
+        header: 'Weight'
       },
       {
         columnDef: 'symbol',
-        header: 'Symbol',
-        cell: (element: PeriodicElement) => `${element.symbol}`
+        header: 'Symbol'
       }
     ],
     data:[

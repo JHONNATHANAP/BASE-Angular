@@ -7,7 +7,6 @@ export interface TableModel {
 export interface column {
   columnDef: string;
   header: string;
-  cell: any;
 }
 @Component({
   selector: 'app-table',
@@ -25,6 +24,7 @@ export class TableComponent implements OnInit {
   ngOnInit(): void {
     this.dataSource = this.table.data
     this.displayedColumns = this.table.columns.map(c => c.columnDef);
+    console.log(this.table)
   }
 
 }
