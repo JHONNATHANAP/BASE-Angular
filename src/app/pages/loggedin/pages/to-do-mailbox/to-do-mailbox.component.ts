@@ -24,28 +24,23 @@ export class ToDoMailboxComponent implements OnInit {
     columns: [
       {
         columnDef: 'checkbox',
-        header: '',
-        cell: (element: any) => `${element.checkbox}`
+        header: ''
       },
       {
         columnDef: 'tareas',
-        header: 'Tareas',
-        cell: (element: any) => `${element.tareas}`
+        header: 'Tareas'
       },
       {
         columnDef: 'folio',
-        header: 'Folio',
-        cell: (element: any) => `${element.folio}`
+        header: 'Folio'
       },
       {
         columnDef: 'documento',
-        header: 'Documento',
-        cell: (element: any) => `${element.documento}`
+        header: 'Documento'
       },
       {
         columnDef: 'acciones',
-        header: 'Acciones',
-        cell: (element: any) => `${element.acciones}`
+        header: 'Acciones'
       }
     ],
     data:[

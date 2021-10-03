@@ -83,7 +83,13 @@
 
             </form>
            <div class="w-100 fl-justify-center pt-20">
-            <app-table class="w-60" [table]="table"></app-table>
+            <app-table class="w-60" [table]="table">
+                <tr *ngFor="let item of table.data">
+                    <td *ngFor="let col of table.columns">
+                     {{item[col.columnDef]}}
+                    </td>
+                </tr>
+            </app-table>
            </div>
         </div>
 
