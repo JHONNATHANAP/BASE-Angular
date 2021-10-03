@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { View } from '@app/models/frontend';
+import { TableModel } from '@app/shared/tables/table/table.component';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import * as fromRoot from '../../store';
@@ -18,6 +19,41 @@ export class ToDoMailboxComponent implements OnInit {
     title: "Buzón de tareas pendientes",
     icon: { class: "material-icons-outlined icons md-36", name: "drafts" }
   };
+
+  table:TableModel={
+    columns: [
+      {
+        columnDef: 'checkbox',
+        header: '',
+        cell: (element: any) => `${element.checkbox}`
+      },
+      {
+        columnDef: 'tareas',
+        header: 'Tareas',
+        cell: (element: any) => `${element.tareas}`
+      },
+      {
+        columnDef: 'folio',
+        header: 'Folio',
+        cell: (element: any) => `${element.folio}`
+      },
+      {
+        columnDef: 'documento',
+        header: 'Documento',
+        cell: (element: any) => `${element.documento}`
+      },
+      {
+        columnDef: 'acciones',
+        header: 'Acciones',
+        cell: (element: any) => `${element.acciones}`
+      }
+    ],
+    data:[
+      {checkbox: '', tareas: 'Hydrogen', folio: 1.0079, documento: 'H',acciones:''},
+
+    ]
+  }
+
   constructor(private store: Store<fromRoot.State>,
     private fb: FormBuilder,) { }
 

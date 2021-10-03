@@ -5,6 +5,7 @@ import { ToDoMailboxRoutingModule } from './to-do-mailbox-routing.module';
 import { ToDoMailboxComponent } from './to-do-mailbox.component';
 import { ButtonModule, ControlsModule, FormFieldModule, MaterialInputModule, SpinnerModule } from '@app/shared';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TablesModule } from '@app/shared/tables';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ButtonModule,
     SpinnerModule,
     ControlsModule,
+    TablesModule
   ]
 })
 export class ToDoMailboxModule { }
