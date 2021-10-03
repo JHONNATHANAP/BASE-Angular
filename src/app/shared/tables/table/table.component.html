@@ -1,10 +1,10 @@
-<table  *ngIf="table && table.data && table.data.length>0" 
-    mat-table [dataSource]="dataSource" 
+<!-- <table *ngIf="table && table.data && table.data.length>0" mat-table [dataSource]="dataSource"
     class="table-custom mat-elevation-z0 demo-table">
     <ng-container *ngFor="let column of table.columns" [matColumnDef]="column.columnDef">
         <th class="color" mat-header-cell *matHeaderCellDef>
             {{column.header}}
         </th>
+    
         <td mat-cell *matCellDef="let row">
             {{column.cell(row)}}
         </td>
@@ -12,5 +12,13 @@
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table> -->
+<table>
+    <thead>
+        <th *ngFor="let head of table.columns" >{{head.header}}</th>
+    </thead>
+    <tbody>
+        <ng-content></ng-content>
+    </tbody>
 </table>
 <div *ngIf="!table||(table && table.data && table.data.length==0)">No hay información disponible</div>
