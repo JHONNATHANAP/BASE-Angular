@@ -82,7 +82,12 @@
                 </div>
 
             </form>
-            <div class="w-100 fl-justify-center pt-20">
+            <div class="w-100 fl-justify-center  pt-20">
+               <div class="w-60 fl-justify-end">
+                <app-paginator ></app-paginator>
+               </div>
+            </div>
+            <div class="w-100 fl-justify-center">
                 <app-table class="w-60" [table]="table">
                     <tr *ngFor="let item of table.data">
                         <ng-container *ngFor="let col of table.columns" [ngSwitch]="col.columnDef">
@@ -91,6 +96,7 @@
                                     
                                         <div class="checkbox">
                                             <input type="checkbox" class="checkbox__input">
+                                            <span class="checkbox__checkmark"></span>
                                         </div>
                                   
                                 </ng-template>
