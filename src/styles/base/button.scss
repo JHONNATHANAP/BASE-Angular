@@ -56,6 +56,12 @@
       color: $on-error !important;
     }
 
+    &.blank-primary{
+      border:transparent !important;
+      background-color:$on-primary !important;
+      color: $primary-dark!important;
+    }
+
   }
 
 
@@ -115,6 +121,14 @@
     border:1px solid $error !important;
     background-color:$on-error !important;
     color: $error!important;
+  }
+
+  &.blank-primary{
+    border:transparent !important;
+    background-color:$on-primary !important;
+    color: $primary!important;
+    min-width: auto !important;
+    width: fit-content !important;
   }
 
  

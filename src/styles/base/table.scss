@@ -47,6 +47,9 @@ table {
     th,td{
         padding: 10px !important;
     } 
+    tbody{
+        font-size: 12px;
+    }
 }
 table tr:last-child td:first-child {
     border-bottom-left-radius: 10px;
