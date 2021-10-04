@@ -10,6 +10,7 @@ import { DateModule } from './date/date.module';
 import { DateRangeModule } from './date-range/date-range.module';
 import { AutocompleteModule } from './autocomplete/autocomplete.module';
 import { MaterialInputModule } from './material-input/material-input.module';
+import { CheckboxModule } from './checkbox/checkbox.module';
 
 @NgModule({
   declarations: [],
@@ -24,7 +25,8 @@ import { MaterialInputModule } from './material-input/material-input.module';
     DateModule,
     DateRangeModule,
     AutocompleteModule,
-    MaterialInputModule
+    MaterialInputModule,
+    CheckboxModule
   ],
   exports: [
     InputModule,
@@ -36,7 +38,8 @@ import { MaterialInputModule } from './material-input/material-input.module';
     DateModule,
     DateRangeModule,
     AutocompleteModule,
-    MaterialInputModule
+    MaterialInputModule,
+    CheckboxModule
   ]
 })
 export class ControlsModule { }
