@@ -1,0 +1,11 @@
+<div class="checkboxes {{class}}">
+    <label class="checkbox" [class.checkbox_disabled]="isDisabled">
+        {{checkbox[label]}}
+        <input type="checkbox" class="checkbox__input" [value]="checkbox[value]"
+        [attr.disabled]="isDisabled ? true : null"
+        [checked]="isChecked(checkbox[value])"
+        (change) = "onChanged(checkbox[value], $event)"
+        >
+        <span class="checkbox__checkmark"></span>
+    </label>
+</div>

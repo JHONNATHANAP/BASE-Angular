@@ -23,6 +23,7 @@ export class SharedComponent implements OnInit {
   regexErrors = regexErrors;
 
   items!: ControlItem[];
+  item:ControlItem=  { label: 'Uno', value: 1 };
 
   showSpinner = false;
 
@@ -65,6 +66,11 @@ export class SharedComponent implements OnInit {
         ]
       }],
       checkboxes: [null, {
+        updateOn: 'change', validators: [
+          Validators.required
+        ]
+      }],
+      checkbox: [null, {
         updateOn: 'change', validators: [
           Validators.required
         ]
