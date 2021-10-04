@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { menuOptions } from '@app/const';
 import { UserResponse } from '@app/store/user';
 
 @Component({
@@ -13,7 +14,7 @@ export class MenuListComponent implements OnInit {
   @Input() user !: UserResponse | null;
 
   @Output() signOut = new EventEmitter<void>();
-
+  options=menuOptions;
   constructor() { }
 
   ngOnInit(): void {
