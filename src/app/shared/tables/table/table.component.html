@@ -13,12 +13,14 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table> -->
-<table>
-    <thead>
-        <th *ngFor="let head of table.columns" >{{head.header}}</th>
-    </thead>
-    <tbody>
-        <ng-content></ng-content>
-    </tbody>
-</table>
-<div *ngIf="!table||(table && table.data && table.data.length==0)">No hay información disponible</div>
+<div class="table-container" >
+    <table>
+        <thead>
+            <th *ngFor="let head of table.columns" >{{head.header}}</th>
+        </thead>
+        <tbody>
+            <ng-content></ng-content>
+        </tbody>
+    </table>
+    <div *ngIf="!table||(table && table.data && table.data.length==0)">No hay información disponible</div>
+</div>
