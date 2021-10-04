@@ -91,7 +91,7 @@
                 <app-table class="w-60" [table]="table">
                     <tr *ngFor="let item of table.data">
                         <ng-container *ngFor="let col of table.columns" [ngSwitch]="col.columnDef">
-                            <td [ngClass]="{'tx-start':col.columnDef=='documento'}">
+                            <td [ngClass]="{'tx-start':col.columnDef=='documento','tx-check':col.columnDef=='checkbox'}">
                                 <ng-template ngSwitchCase="checkbox">
                                     
                                    <app-checkbox [checkbox]="item[col.columnDef]"></app-checkbox>
