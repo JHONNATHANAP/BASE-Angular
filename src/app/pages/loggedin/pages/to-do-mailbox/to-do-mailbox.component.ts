@@ -57,9 +57,9 @@ export class ToDoMailboxComponent implements OnInit {
     { id: 1, title: "Validacióna" },
     { id: 2, title: "Visación" },
     { id: 3, title: "Aprobación" },
-    { id: 3, title: "Recepción" },
-    { id: 3, title: "Gestor" },
-    { id: 3, title: "Pago" },
+    { id: 4, title: "Recepción" },
+    { id: 5, title: "Gestor" },
+    { id: 6, title: "Pago" },
   ]
 
   ngOnInit(): void {
