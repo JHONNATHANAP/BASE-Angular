@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PaginatorComponent } from './paginator.component';
+import { ButtonsModule } from '@app/shared/buttons';
 
 
 
@@ -9,10 +10,12 @@ import { PaginatorComponent } from './paginator.component';
     PaginatorComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ButtonsModule
   ],
   exports:[
-    PaginatorComponent
+    PaginatorComponent,
+    
   ]
 })
 export class PaginatorModule { }
