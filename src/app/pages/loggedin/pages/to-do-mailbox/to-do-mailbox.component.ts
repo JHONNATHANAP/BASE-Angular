@@ -44,7 +44,7 @@ export class ToDoMailboxComponent implements OnInit {
       }
     ],
     data:[
-      {checkbox: '', tareas: 'Hydrogen', folio: 1.0079, documento: 'H',acciones:''},
+      {checkbox:'',tareas: 'Validación', folio:'2020-1345-temp', documento:{realizador:"ANDREA MARIN",creacion:'20/09/2020',asunto:'Lorem ipsum dolor sit ament'},acciones:''},
 
     ]
   }

@@ -82,15 +82,47 @@
                 </div>
 
             </form>
-           <div class="w-100 fl-justify-center pt-20">
-            <app-table class="w-60" [table]="table">
-                <tr *ngFor="let item of table.data">
-                    <td *ngFor="let col of table.columns">
-                     {{item[col.columnDef]}}
-                    </td>
-                </tr>
-            </app-table>
-           </div>
+            <div class="w-100 fl-justify-center pt-20">
+                <app-table class="w-60" [table]="table">
+                    <tr *ngFor="let item of table.data">
+                        <ng-container *ngFor="let col of table.columns" [ngSwitch]="col.columnDef">
+                            <td [ngClass]="{'tx-start':col.columnDef=='documento'}">
+                                <ng-template ngSwitchCase="checkbox">
+                                    
+                                        <div class="checkbox">
+                                            <input type="checkbox" class="checkbox__input">
+                                        </div>
+                                  
+                                </ng-template>
+    
+                                <ng-template ngSwitchCase="tareas">
+                                    {{item[col.columnDef]}}
+                                </ng-template>
+
+                                <ng-template ngSwitchCase="folio">
+                                    {{item[col.columnDef]}}
+                                </ng-template>
+    
+                                <ng-template ngSwitchCase="documento">
+                                    <b>Solicitud RRHH</b><br>
+                                    <b>Realizador:</b> {{item[col.columnDef].realizador}} <br>
+                                    <b>Creación:</b> {{item[col.columnDef].creacion}}<br>
+                                    <b>Asunto:</b>{{item[col.columnDef].asunto }}<br>
+                                </ng-template>
+    
+                                <ng-template ngSwitchCase="acciones">
+                                    <a >Completar tarea</a> <br>
+                                    <a>Ver archivo</a> <br>
+                                    <a >Ir a documento</a>
+                                </ng-template>
+                            </td>
+                   
+                        </ng-container>
+
+
+                    </tr>
+                </app-table>
+            </div>
         </div>
 
     </div>
