@@ -1,0 +1,31 @@
+@import "styles/colors";
+
+.checkbox {
+
+  margin: 0;
+  padding: 0;
+
+  
+
+  &__checkmark {   
+   // top: 0;
+    //left: 0;
+    display: flex;
+    height: 20px;
+    width: 20px;  
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+  }
+
+ 
+}
+
+:host-context(.form-field_error) {
+  .checkbox__checkmark {
+    border: 1px solid $error;
+  }
+}

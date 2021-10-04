@@ -94,10 +94,7 @@
                             <td [ngClass]="{'tx-start':col.columnDef=='documento'}">
                                 <ng-template ngSwitchCase="checkbox">
                                     
-                                        <div class="checkbox">
-                                            <input type="checkbox" class="checkbox__input">
-                                            <span class="checkbox__checkmark"></span>
-                                        </div>
+                                   <app-checkbox [checkbox]="item[col.columnDef]"></app-checkbox>
                                   
                                 </ng-template>
     
