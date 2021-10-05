@@ -6,7 +6,8 @@ export const routesPath = {
         exampleList: 'examplelist',
         exampleForm: 'example-form',
         userProfiles: 'profiles',
-        toDoMailbox: 'todomailbox'
+        toDoMailbox: 'todomailbox',
+        newDocument:'newdocument'
     },
     loggedout: {
         path: 'out',
@@ -39,6 +40,11 @@ export const menuOptions = [
         name: 'Buzón',
         path: `./${routesPath.loggedin.toDoMailbox}`,
         icon: { class: 'material-icons-outlined icons', name: 'drafts' }
+    },
+    {
+        name: 'Ingreso documento',
+        path: `./${routesPath.loggedin.newDocument}`,
+        icon: { class: 'material-icons-outlined icons', name: 'article' }
     },
     {
         name: 'login',

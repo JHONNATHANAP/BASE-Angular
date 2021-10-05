@@ -20,7 +20,7 @@ export class ToDoMailboxComponent implements OnInit {
     icon: { class: "material-icons-outlined icons md-36", name: "drafts" }
   };
 
-  table:TableModel={
+  table: TableModel = {
     columns: [
       {
         columnDef: 'checkbox',
@@ -43,9 +43,9 @@ export class ToDoMailboxComponent implements OnInit {
         header: 'Acciones'
       }
     ],
-    data:[
-      {checkbox:{label:"",value:"1"},tareas: 'Validación', folio:'2020-1345-temp', documento:{realizador:"ANDREA MARIN",creacion:'20/09/2020',asunto:'Lorem ipsum dolor sit ament'},acciones:''},
-      {checkbox:{label:"",value:"1"},tareas: 'Aprobación', folio:'2020-1345-temp', documento:{realizador:"ANDREA MARIN",creacion:'20/09/2020',asunto:'Lorem ipsum dolor sit ament'},acciones:''},
+    data: [
+      { checkbox: { label: "", value: "1" }, tareas: 'Validación', folio: '2020-1345-temp', documento: { realizador: "ANDREA MARIN", creacion: '20/09/2020', asunto: 'Lorem ipsum dolor sit ament' }, acciones: '' },
+      { checkbox: { label: "", value: "1" }, tareas: 'Aprobación', folio: '2020-1345-temp', documento: { realizador: "ANDREA MARIN", creacion: '20/09/2020', asunto: 'Lorem ipsum dolor sit ament' }, acciones: '' },
 
     ]
   }

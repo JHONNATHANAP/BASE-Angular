@@ -23,7 +23,11 @@ const routes: Routes = [
       {
         path: routesPath.loggedin.toDoMailbox,
         loadChildren: () => import('./pages/to-do-mailbox/to-do-mailbox-routing.module').then(m=>m.ToDoMailboxRoutingModule)
-      }    
+      },
+      {
+        path: routesPath.loggedin.newDocument,
+        loadChildren: () => import('./pages/new-document/new-document-routing.module').then(m=>m.NewDocumentRoutingModule)
+      }     
 
     ]
   }

@@ -1,0 +1,48 @@
+<div class="app-page full-page fl-justify-center pl-0 pr-0">
+
+    <div class="app-page__content fl-justify-center w-100">
+        <div class="form w-100  fl-col">
+
+            <form [formGroup]="form" class="w-100 fl-al-item-center fl-col" (submit)="onSubmit()"
+                (keyup.enter)="onSubmit()" novalidate autocomplete="off">
+
+
+                <div class="w-40 fl-col">
+
+                    <app-form-field  [control]="form.controls.documentType">
+                        <app-select placeholder="Tipo del Documento" label="label" value="value"
+                            formControlName="documentType" [items]="options" label="title" value="id"></app-select>
+                    </app-form-field>
+
+                    <app-form-field [control]="form.controls.categoria">
+                        <app-select placeholder="Categoría del documento" label="label" value="value"
+                            formControlName="categoria" [items]="options" label="title" value="id"></app-select>
+                    </app-form-field>
+
+                    <app-form-field  [control]="form.controls.clasificacion">
+                        <app-select placeholder="Clasificación del Documento" label="label" value="value"
+                            formControlName="clasificacion" [items]="options" label="title" value="id"></app-select>
+                    </app-form-field>
+
+                    <app-form-field  [control]="form.controls.materia">
+                        <app-material-input placeholder="Materia" formControlName="materia"></app-material-input>
+                    </app-form-field>
+
+                    <app-form-field  [control]="form.controls.glosa">
+                        <app-material-input placeholder="Glosa" formControlName="glosa"></app-material-input>
+                    </app-form-field>
+             
+                </div>
+
+
+                <div class="pt-20">
+                    <app-button [class]="'secondary pr-35 pl-35'" type="submit">Guardar</app-button>
+                </div>
+
+            </form>
+            
+        </div>
+
+    </div>
+
+</div>

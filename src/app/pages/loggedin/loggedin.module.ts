@@ -13,6 +13,7 @@ import { StoreModule } from '@ngrx/store';
 import { reducers } from './store';
 import { ToDoMailboxModule } from './pages/to-do-mailbox/to-do-mailbox.module';
 import { UserProfilesModule } from './pages/user-profiles/user-profiles.module';
+import { NewDocumentModule } from './pages/new-document/new-document.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { UserProfilesModule } from './pages/user-profiles/user-profiles.module';
     StoreModule.forFeature('loggedin',reducers),
 
     ToDoMailboxModule,
-    UserProfilesModule
+    UserProfilesModule,
+    NewDocumentModule
   ]
 })
 export class LoggedinModule { }
