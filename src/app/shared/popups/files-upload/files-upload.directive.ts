@@ -30,6 +30,7 @@ export class FilesUploadDirective {
     })
 
     dialogRef.afterClosed().subscribe(result => {
+      console.log(result)
       this.changed.emit(result || null);
     })
 

@@ -6,7 +6,7 @@
 <h2>Actions</h2>
 <div class="fl-col">
   <app-button (onClick)="onToggleSpinner()" [class]="'outline-primary'" class="pt-5">Toggle Spinner</app-button>
-  <app-button (onClick)="onError()" [class]="'secondary'"  class="pt-5">Error</app-button>
+  <app-button (onClick)="onError()" [class]="'secondary'" class="pt-5">Error</app-button>
   <app-button (onClick)="onSuccess()" [class]="'success'" class="pt-5">Success</app-button>
 </div>
 <br /><br /><br />
@@ -39,7 +39,8 @@
     </app-form-field>
 
     <app-form-field label="Select" [required]="true" [control]="form.controls.select" [isInline]="isInline">
-      <app-select placeholder="Select"  label="label" value="value" formControlName="select" [items]="items"></app-select>
+      <app-select placeholder="Select" label="label" value="value" formControlName="select" [items]="items">
+      </app-select>
     </app-form-field>
 
     <app-form-field label="Checkboxes" [required]="true" [control]="form.controls.checkboxes" [isInline]="isInline">
@@ -49,7 +50,7 @@
     <app-form-field label="Checkbox" [required]="true" [control]="form.controls.checkbox" [isInline]="isInline">
       <app-checkbox label="label" value="value" formControlName="checkbox" [checkbox]="item"></app-checkbox>
     </app-form-field>
-    
+
 
     <app-form-field label="Radios" [required]="true" [control]="form.controls.radios" [isInline]="isInline">
       <app-radios label="label" value="value" formControlName="radios" [items]="items"></app-radios>
@@ -65,6 +66,15 @@
 
     <app-form-field [required]="true" [control]="form.controls.inputMaterial" [isInline]="isInline">
       <app-material-input formControlName="inputMaterial" placeholder="Material input"></app-material-input>
+    </app-form-field>
+
+    <app-form-field [required]="true" [control]="form.controls.inputTextArea" [isInline]="isInline">
+      <app-text-area [rows]="5" formControlName="inputTextArea" placeholder="Material input area"></app-text-area>
+    </app-form-field>
+
+    <app-form-field [required]="true" [control]="form.controls.inputFile" [isInline]="isInline"
+      [patternError]="regexErrors.number">
+      <app-input-file formControlName="inputFile" placeholder="Material input file"></app-input-file>
     </app-form-field>
 
   </form>
