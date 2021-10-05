@@ -1,0 +1,14 @@
+<mat-form-field appearance="outline">
+    <mat-label>{{placeholder || ''}}</mat-label>
+    <input [value]="value" (keyup)="onKeyup($event)" (blur)="onBlur()" type="number" [value]="value" matInput
+        [placeholder]="placeholder || ''">
+    <div matSuffix class="fl-col suffix ">
+        <span class="material-icons-outlined " (click)="updateValue(1)">
+            keyboard_arrow_up
+        </span>
+        <span class="material-icons-outlined" (click)="updateValue(-1)">
+            keyboard_arrow_down
+        </span>
+    </div>
+
+</mat-form-field>
