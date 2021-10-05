@@ -25,11 +25,18 @@
                     </app-form-field>
 
                     <app-form-field  [control]="form.controls.materia">
-                        <app-material-input placeholder="Materia" formControlName="materia"></app-material-input>
+                        <app-text-area [rows]="5" formControlName="materia" placeholder="Materia"></app-text-area>
+                       
                     </app-form-field>
 
                     <app-form-field  [control]="form.controls.glosa">
-                        <app-material-input placeholder="Glosa" formControlName="glosa"></app-material-input>
+                        <app-text-area [rows]="5" formControlName="glosa" placeholder="Glosa"></app-text-area>
+                   
+                    </app-form-field>
+
+                    <app-form-field  [control]="form.controls.file">
+                        <app-input-file formControlName="file" placeholder="Seleccionar archivo"></app-input-file>
+                   
                     </app-form-field>
              
                 </div>
