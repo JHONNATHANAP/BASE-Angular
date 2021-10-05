@@ -95,6 +95,11 @@ export class SharedComponent implements OnInit {
           Validators.required
         ]
       }],
+      inputNumber: [null, {
+        updateOn: 'change', validators: [
+          Validators.required
+        ]
+      }],
       inputTextArea: [null, {
         updateOn: 'change', validators: [
           Validators.required

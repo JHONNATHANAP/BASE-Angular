@@ -13,6 +13,7 @@ import { MaterialInputModule } from './material-input/material-input.module';
 import { CheckboxModule } from './checkbox/checkbox.module';
 import { TextAreaModule } from './text-area/text-area.module';
 import { InputFileModule } from './input-file/input-file.module';
+import { InputNumberModule } from './input-number/input-number.module';
 
 @NgModule({
   declarations: [],
@@ -30,7 +31,8 @@ import { InputFileModule } from './input-file/input-file.module';
     MaterialInputModule,
     CheckboxModule,
     TextAreaModule,
-    InputFileModule
+    InputFileModule,
+    InputNumberModule
   ],
   exports: [
     InputModule,
@@ -45,7 +47,8 @@ import { InputFileModule } from './input-file/input-file.module';
     MaterialInputModule,
     CheckboxModule,
     TextAreaModule,
-    InputFileModule
+    InputFileModule,
+    InputNumberModule
   ]
 })
 export class ControlsModule { }

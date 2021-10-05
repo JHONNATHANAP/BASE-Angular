@@ -68,6 +68,10 @@
       <app-material-input formControlName="inputMaterial" placeholder="Material input"></app-material-input>
     </app-form-field>
 
+    <app-form-field [required]="true" [control]="form.controls.inputNumber" [isInline]="isInline">
+      <app-input-number formControlName="inputNumber" placeholder="Input number"></app-input-number>
+    </app-form-field>
+
     <app-form-field [required]="true" [control]="form.controls.inputTextArea" [isInline]="isInline">
       <app-text-area [rows]="5" formControlName="inputTextArea" placeholder="Material input area"></app-text-area>
     </app-form-field>

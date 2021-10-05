@@ -1,0 +1,25 @@
+@import "styles/colors";
+
+.suffix {
+    position: absolute;
+    top: -32px;
+    cursor: pointer;
+    left: -20px;
+    color: $primary;
+    display: flex !important;
+    align-content: center;
+    align-items: center;
+    span {
+        height: 15px !important;
+        &:hover {
+            color: $primary-dark !important;
+            font-size: 29px;
+           
+        }
+    }
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
