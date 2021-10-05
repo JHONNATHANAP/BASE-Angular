@@ -27,7 +27,11 @@ const routes: Routes = [
       {
         path: routesPath.loggedin.newDocument,
         loadChildren: () => import('./pages/new-document/new-document-routing.module').then(m=>m.NewDocumentRoutingModule)
-      }     
+      }   ,
+      {
+        path: routesPath.loggedin.newRequirement,
+        loadChildren: () => import('./pages/new-requirement/new-requirement-routing.module').then(m=>m.NewRequirementRoutingModule)
+      }    
 
     ]
   }

@@ -14,6 +14,7 @@ import { reducers } from './store';
 import { ToDoMailboxModule } from './pages/to-do-mailbox/to-do-mailbox.module';
 import { UserProfilesModule } from './pages/user-profiles/user-profiles.module';
 import { NewDocumentModule } from './pages/new-document/new-document.module';
+import { NewRequirementModule } from './pages/new-requirement/new-requirement.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NewDocumentModule } from './pages/new-document/new-document.module';
 
     ToDoMailboxModule,
     UserProfilesModule,
-    NewDocumentModule
+    NewDocumentModule,
+    NewRequirementModule
   ]
 })
 export class LoggedinModule { }

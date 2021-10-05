@@ -1,20 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { NewDocumentRoutingModule } from './new-document-routing.module';
-import { NewDocumentComponent } from './new-document.component';
-import { ButtonModule, SpinnerModule, ControlsModule, FormFieldModule } from '@app/shared';
+import { NewRequirementRoutingModule } from './new-requirement-routing.module';
+import { NewRequirementComponent } from './new-requirement.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormFieldModule, ButtonModule, SpinnerModule, ControlsModule } from '@app/shared';
 
 
 @NgModule({
   declarations: [
-    NewDocumentComponent
+    NewRequirementComponent
   ],
   imports: [
     CommonModule,
-    NewDocumentRoutingModule,
-    
+    NewRequirementRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     FormFieldModule,
@@ -23,4 +22,4 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ControlsModule,
   ]
 })
-export class NewDocumentModule { }
+export class NewRequirementModule { }
