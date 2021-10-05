@@ -95,6 +95,16 @@ export class SharedComponent implements OnInit {
           Validators.required
         ]
       }],
+      inputTextArea: [null, {
+        updateOn: 'change', validators: [
+          Validators.required
+        ]
+      }],
+      inputFile: [null, {
+        updateOn: 'change', validators: [
+          Validators.required
+        ]
+      }],
     });
   }
 
@@ -115,6 +125,7 @@ export class SharedComponent implements OnInit {
   }
 
   onSubmit(): void {
+    console.log(this.form.value)
 
     if (!this.form.valid) {
       markFormGroupTouched(this.form);

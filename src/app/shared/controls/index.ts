@@ -8,6 +8,6 @@ export * from './radios/radios.module';
 export * from './date/date.module';
 export * from './date-range/date-range.module';
 export * from './autocomplete/autocomplete.module';
-
+export * from './text-area/text-area.module';
 
 export * from './material-input/material-input.module';
