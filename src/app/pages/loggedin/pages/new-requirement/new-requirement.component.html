@@ -7,7 +7,7 @@
                 (keyup.enter)="onSubmit()" novalidate autocomplete="off">
 
 
-                <div class="w-60 fl-col">
+                <div class="w-60 fl-col form-container">
                     <div class="fl-row">
                         <app-form-field class="pr-10 w-50" [control]="form.controls.requirementType">
                             <app-select placeholder="Tipo de Requerimiento" label="label" value="value"
@@ -73,7 +73,7 @@
 
 
 
-                <div class=" w-100 r-0 p-20 fl-justify-center header">
+                <div class=" w-100 r-0 p-20 fl-justify-center header input-number-container">
                     <div class="input-number pl-20 pr-20">                       
                         <app-form-field [control]="form.controls.variation" label="Variación" [isInline]="false">
                             <app-input-number formControlName="variation"></app-input-number>

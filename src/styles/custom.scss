@@ -2,5 +2,26 @@
     .checkboxes, .d-flex{
         display: block !important;
     }
+    .form-container{
+        width: 90% !important;
+     
+        .fl-row{
+            display: flex;
+            flex-direction: column !important;
+            app-form-field{
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+        }
+        
+    }
+    .input-number-container{
+        justify-content: space-between !important;
+        .input-number{
+            padding: 0 !important;
+           
+        }
+    }
   
 }
