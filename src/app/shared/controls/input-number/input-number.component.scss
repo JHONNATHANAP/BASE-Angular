@@ -23,3 +23,13 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none; 
   margin: 0; 
 }
+:host-context(.form-field_error) {
+    ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+      color: $error !important;
+      // opacity: 1!important;
+    }
+    ::ng-deep .mat-form-field-label {
+      color: $error !important;
+    }
+  }
+  
