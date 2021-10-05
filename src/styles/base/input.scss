@@ -36,3 +36,15 @@ mat-form-field {
   }
 }
 
+.input-number{
+    color: $primary;
+    display: flex;
+    justify-content: center;
+    app-form-field{
+        max-width: 100px;
+        label{
+          justify-content: center !important;
+          font-weight: 500;
+        }
+    }
+}
