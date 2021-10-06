@@ -1,0 +1,33 @@
+<div class="app-page full-page fl-justify-center pl-0 pr-0">
+
+    <div class="app-page__content fl-justify-center w-100">
+        <div class="form w-40  fl-col card">
+
+            <form [formGroup]="form" class="w-100 fl-al-item-center fl-col" (submit)="onSubmit()"
+                (keyup.enter)="onSubmit()" novalidate autocomplete="off">
+
+                <h3>Días disponibles: {{diasDisponibles}}</h3>
+                <div class=" fl-col form-container w-100">
+                    <div class="fl-row">
+                        <app-form-field class="pr-10 w-50" [control]="form.controls.fechaDesde">
+                            <app-date formControlName="fechaDesde" placeholder="Fecha desde"></app-date>
+                        </app-form-field>
+
+                        <app-form-field class="pl-10 w-50" [control]="form.controls.fechaHasta">
+                            <app-date formControlName="fechaHasta" placeholder="Fecha hasta"></app-date>
+                        </app-form-field>
+
+                    </div>                   
+                </div>
+                <h3>Días solicitados: ({{diasSolicitados}})</h3>
+                <div class="pt-20">
+                    <app-button [class]="'secondary pr-35 pl-35'" type="submit">Guardar</app-button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

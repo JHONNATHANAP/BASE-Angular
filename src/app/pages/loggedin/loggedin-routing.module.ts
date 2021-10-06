@@ -43,6 +43,10 @@ const routes: Routes = [
       {
         path: routesPath.loggedin.recentlyVisited,
         loadChildren: () => import('./pages/recently-visited/recently-visited-routing.module').then(m => m.RecentlyVisitedRoutingModule)
+      },
+      {
+        path: routesPath.loggedin.newDetail,
+        loadChildren: () => import('./pages/new-detail/new-detail-routing.module').then(m => m.NewDetailRoutingModule)
       }
 
     ]

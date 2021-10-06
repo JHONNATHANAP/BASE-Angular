@@ -1,0 +1,22 @@
+@import "styles/colors";
+.card {
+    height: fit-content;
+    h3{
+        width: 100%;
+        font-weight: 500;
+        color:$primary;
+        margin: 5px;
+    }
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    div {
+        background-color: white !important;
+    }
+    // opacity: 1!important;
+}
+@media only screen and (max-width: 800px) {
+  .form{
+      width: 90% !important;
+  }
+  
+}
