@@ -23,5 +23,16 @@
            
         }
     }
+    .solicitud{
+        .fl-row{
+            display: flex;
+            flex-direction: column !important;
+            app-form-field{
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+        }
+    }
   
 }
