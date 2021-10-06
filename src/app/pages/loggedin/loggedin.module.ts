@@ -15,6 +15,7 @@ import { ToDoMailboxModule } from './pages/to-do-mailbox/to-do-mailbox.module';
 import { UserProfilesModule } from './pages/user-profiles/user-profiles.module';
 import { NewDocumentModule } from './pages/new-document/new-document.module';
 import { NewRequirementModule } from './pages/new-requirement/new-requirement.module';
+import { DetailRequirementModule } from './pages/detail-requirement/detail-requirement.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { NewRequirementModule } from './pages/new-requirement/new-requirement.mo
     ToDoMailboxModule,
     UserProfilesModule,
     NewDocumentModule,
-    NewRequirementModule
+    NewRequirementModule,
+    DetailRequirementModule
   ]
 })
 export class LoggedinModule { }

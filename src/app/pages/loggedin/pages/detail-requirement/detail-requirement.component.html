@@ -1,0 +1,45 @@
+<div class="app-page full-page fl-justify-center pl-0 pr-0">
+
+    <div class="app-page__content fl-justify-center w-100">
+        <div class="p-50 card">
+
+            <div class="w-100 ">
+                <div class="title fl-justify-center">
+                    <h2>{{requirenment.title}}</h2>
+                </div>
+                <div class="fl-row fl-justify-center">
+                    <div class=" fl-justify-center fl-al-item-center">
+                        <div class="img   ">
+                            <img src="../../../../../assets/img/tipos-pantalla.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="content pl-25 pt-10 h-100">
+                        <h2>Estado</h2>
+                        <p>{{requirenment.estado}}</p>
+
+                        <h2>Materia</h2>
+                        <p>{{requirenment.materia}}</p>
+
+                        <h2>Glosa</h2>
+                        <p>{{requirenment.glosa}}</p>
+
+                        <h2>Autor</h2>
+                        <p>{{requirenment.autor}}</p>
+
+                        <h2>Fechas relacionadas</h2>
+                        <p>
+                            <ng-container *ngFor="let op of  requirenment.fechas">
+                                {{op.title}} {{op.date}} <br>
+                            </ng-container>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>

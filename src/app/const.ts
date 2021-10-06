@@ -8,7 +8,8 @@ export const routesPath = {
         userProfiles: 'profiles',
         toDoMailbox: 'todomailbox',
         newDocument:'newdocument',
-        newRequirement:'newrequirement'
+        newRequirement:'newrequirement',
+        detailRequirement:'detailrequirement'
     },
     loggedout: {
         path: 'out',
@@ -51,6 +52,11 @@ export const menuOptions = [
         name: 'Ingreso Requerimiento',
         path: `./${routesPath.loggedin.newRequirement}`,
         icon: { class: 'material-icons-outlined icons', name: 'edit' }
+    },
+    {
+        name: 'Detalle de Solicitud',
+        path: `./${routesPath.loggedin.detailRequirement}`,
+        icon: { class: 'material-icons-outlined icons', name: 'assignment' }
     },
     {
         name: 'login',
