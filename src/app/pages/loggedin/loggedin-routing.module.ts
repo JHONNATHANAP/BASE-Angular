@@ -39,6 +39,10 @@ const routes: Routes = [
       {
         path: routesPath.loggedin.myData,
         loadChildren: () => import('./pages/my-data/my-data-routing.module').then(m => m.MyDataRoutingModule)
+      },
+      {
+        path: routesPath.loggedin.recentlyVisited,
+        loadChildren: () => import('./pages/recently-visited/recently-visited-routing.module').then(m => m.RecentlyVisitedRoutingModule)
       }
 
     ]

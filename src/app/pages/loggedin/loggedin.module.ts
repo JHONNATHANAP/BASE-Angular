@@ -17,6 +17,7 @@ import { NewDocumentModule } from './pages/new-document/new-document.module';
 import { NewRequirementModule } from './pages/new-requirement/new-requirement.module';
 import { DetailRequirementModule } from './pages/detail-requirement/detail-requirement.module';
 import { MyDataModule } from './pages/my-data/my-data.module';
+import { RecentlyVisitedModule } from './pages/recently-visited/recently-visited.module';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { MyDataModule } from './pages/my-data/my-data.module';
     NewDocumentModule,
     NewRequirementModule,
     DetailRequirementModule,
-    MyDataModule
+    MyDataModule,
+    RecentlyVisitedModule
   ]
 })
 export class LoggedinModule { }

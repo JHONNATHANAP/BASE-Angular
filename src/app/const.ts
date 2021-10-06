@@ -10,7 +10,8 @@ export const routesPath = {
         newDocument:'newdocument',
         newRequirement:'newrequirement',
         detailRequirement:'detailrequirement',
-        myData:"mydata"
+        myData:"mydata",
+        recentlyVisited:"recentlyvisited"
     },
     loggedout: {
         path: 'out',
@@ -63,6 +64,11 @@ export const menuOptions = [
         name: 'Mis datos',
         path: `./${routesPath.loggedin.myData}`,
         icon: { class: 'material-icons-outlined icons', name: 'assignment_ind' }
+    },
+    {
+        name: 'Visitados Recientemente',
+        path: `./${routesPath.loggedin.recentlyVisited}`,
+        icon: { class: 'material-icons-outlined icons', name: 'visibility' }
     },
     {
         name: 'login',
