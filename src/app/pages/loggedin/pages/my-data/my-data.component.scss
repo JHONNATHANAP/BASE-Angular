@@ -1,0 +1,62 @@
+@import "styles/colors";
+.profile {
+    .profile-data {
+        line-height: 1.8;
+    }
+    .profile-image{
+        height: 100px;
+        img{
+            height: 100px;
+        }
+    }
+    
+}
+.roles{
+    line-height: 1.5;
+    h3{
+        color: $primary;
+        font-weight: 600;
+    }
+}
+.firmas{
+    h3{
+        color: $primary;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+    .firmas_type{
+        h4{
+            margin: 0;
+            margin-bottom: 5px;
+        }
+        .firma{
+            min-width: 80px;
+            min-height: 80px;
+            border-radius: 6px;
+            border: 1px solid rgb(92, 92, 92);
+            background-color: white;
+        }
+    }
+}
+.subrogancias{
+    h3{
+        color: $primary;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .card{
+        flex-direction: column !important;
+    }
+    .firmas{
+        padding: 0px !important;
+    }
+    .roles{
+        align-items: flex-start !important;
+    }
+  
+}
+td{
+    padding: 30px !important;
+}

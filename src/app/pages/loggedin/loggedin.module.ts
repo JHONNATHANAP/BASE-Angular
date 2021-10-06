@@ -16,6 +16,7 @@ import { UserProfilesModule } from './pages/user-profiles/user-profiles.module';
 import { NewDocumentModule } from './pages/new-document/new-document.module';
 import { NewRequirementModule } from './pages/new-requirement/new-requirement.module';
 import { DetailRequirementModule } from './pages/detail-requirement/detail-requirement.module';
+import { MyDataModule } from './pages/my-data/my-data.module';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { DetailRequirementModule } from './pages/detail-requirement/detail-requi
     UserProfilesModule,
     NewDocumentModule,
     NewRequirementModule,
-    DetailRequirementModule
+    DetailRequirementModule,
+    MyDataModule
   ]
 })
 export class LoggedinModule { }

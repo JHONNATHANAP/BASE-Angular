@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { View } from '@app/models/frontend';
 import { Store } from '@ngrx/store';
-import * as fromRoot from '../../store';
-import * as fromLoggedin from '../../store/loggedin';
+import * as fromRoot from '@app/pages/loggedin/store';
+import * as fromLoggedin from '@app/pages/loggedin/store/loggedin';
 
 @Component({
   selector: 'app-user-profiles',

@@ -35,6 +35,10 @@ const routes: Routes = [
       {
         path: routesPath.loggedin.detailRequirement,
         loadChildren: () => import('./pages/detail-requirement/detail-requirement-routing.module').then(m => m.DetailRequirementRoutingModule)
+      },
+      {
+        path: routesPath.loggedin.myData,
+        loadChildren: () => import('./pages/my-data/my-data-routing.module').then(m => m.MyDataRoutingModule)
       }
 
     ]

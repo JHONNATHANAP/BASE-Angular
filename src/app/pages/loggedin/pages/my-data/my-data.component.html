@@ -1,0 +1,103 @@
+<div class="app-page full-page fl-justify-center pl-0 pr-0">
+
+    <div class="app-page__content fl-justify-center w-100">
+        <div class="form w-100  fl-al-item-center fl-col">
+            <div class="w-60 pb-30 fl-row fl-justify-center profile">
+                <div class="profile-image">
+                    <img src="../../../../../assets/img/profile.jpg" alt="">
+                </div>
+                <div class="profile-data fl-col pl-20">
+                    <p>
+                        {{user.name}} <br>
+                        {{user.document}} <br>
+                        {{user.email}}
+                    </p>
+
+                </div>
+            </div>
+            <div class="card w-100 r-0 p-20 fl-al-con-center fl-row header fl-justify-center">
+                <div class="roles fl-col w-100 fl-al-item-center">
+                 <div>
+                    <h3>Roles</h3>
+                    <p >
+                        <ng-container *ngFor="let op of user.roles">
+                            {{op.name}} <br>
+                        </ng-container>
+                      
+                    </p>
+                 </div>
+                </div>
+                <div class="firmas fl-col pl-20 w-100 fl-al-item-start">
+                   <div>
+                    <h3>Firmas</h3>
+                    <div class="firmas_type fl-row">
+                        <div class="fl-col pr-35">
+                            <h4>Visado</h4>
+                            <div class="firma"></div>
+                        </div>
+                        <div class="fl-col pr-35">
+                            <h4>Firmado</h4>
+                            <div class="firma"></div>
+                        </div>
+                        <div class="fl-col pr-35">
+                            <h4>Aprobación</h4>
+                            <div class="firma"></div>
+                        </div>
+
+                    </div>
+                   </div>
+                </div>
+            </div>
+            <div class="w-75 fl-col subrogancias">
+                <h3>Subrogancias</h3>
+                <div>
+                    <div class="w-100 fl-justify-center">
+                        <div class="w-100 fl-justify-end">
+                         <app-paginator ></app-paginator>
+                        </div>
+                     </div>
+                    <app-table  [table]="table">
+                        <tr *ngFor="let item of table.data">
+                            <ng-container *ngFor="let col of table.columns" [ngSwitch]="col.columnDef">
+                                <td class="p-25">
+                                
+        
+                                    <ng-template ngSwitchCase="estado">
+                                        {{item[col.columnDef]}}
+                                    </ng-template>
+    
+                                    <ng-template ngSwitchCase="rol">
+                                        {{item[col.columnDef]}}
+                                    </ng-template>
+    
+                                    <ng-template ngSwitchCase="dias">
+                                        {{item[col.columnDef]}}
+                                    </ng-template>
+    
+                                    <ng-template ngSwitchCase="fechaInicio">
+                                        {{item[col.columnDef]}}
+                                    </ng-template>
+    
+                                    <ng-template ngSwitchCase="fechaFin">
+                                        {{item[col.columnDef]}}
+                                    </ng-template>
+                                    
+                                    <ng-template ngSwitchCase="acciones">
+                                        {{item[col.columnDef]}}
+                                    </ng-template>
+        
+                                </td>
+                       
+                            </ng-container>
+    
+    
+                        </tr>
+                    </app-table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

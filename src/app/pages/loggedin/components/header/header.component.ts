@@ -3,9 +3,9 @@ import { View } from '@app/models/frontend';
 import { UserResponse } from '@app/store/user';
 import { Store,select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import * as fromRoot from '../../store';
-import * as fromLoggedin from '../../store/loggedin';
-import { Loggedin } from '../../store/loggedin';
+import * as fromRoot from '@app/pages/loggedin/store';
+import * as fromLoggedin from '@app/pages/loggedin/store/loggedin';
+import { Loggedin } from '@app/pages/loggedin/store/loggedin';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',

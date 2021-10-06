@@ -3,8 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { View } from '@app/models/frontend';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import * as fromRoot from '../../store';
-import * as fromLoggedin from '../../store/loggedin';
+import * as fromRoot from '@app/pages/loggedin/store';
+import * as fromLoggedin from '@app/pages/loggedin/store/loggedin';
 @Component({
   selector: 'app-new-document',
   templateUrl: './new-document.component.html',

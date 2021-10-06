@@ -3,8 +3,8 @@ import { MatDrawerMode } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import * as fromRoot from '../../store';
-import * as fromUser from '../../store/user';
+import * as fromRoot from '@app/store';
+import * as fromUser from '@app/store/user';
 @Component({
   selector: 'app-loggedin',
   templateUrl: './loggedin.component.html',
