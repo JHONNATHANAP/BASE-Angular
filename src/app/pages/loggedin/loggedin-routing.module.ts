@@ -33,9 +33,9 @@ const routes: Routes = [
         loadChildren: () => import('./pages/new-requirement/new-requirement-routing.module').then(m => m.NewRequirementRoutingModule)
       },
       {
-        path: routesPath.loggedin.detailRequirement,
-        loadChildren: () => import('./pages/detail-requirement/detail-requirement-routing.module').then(m => m.DetailRequirementRoutingModule)
-      },
+        path: routesPath.loggedin.detailRequest,
+        loadChildren: () => import('./pages/detail-request/detail-request-routing.module').then(m => m.DetailRequestRoutingModule)
+      },    
       {
         path: routesPath.loggedin.myData,
         loadChildren: () => import('./pages/my-data/my-data-routing.module').then(m => m.MyDataRoutingModule)
@@ -47,7 +47,11 @@ const routes: Routes = [
       {
         path: routesPath.loggedin.newDetail,
         loadChildren: () => import('./pages/new-detail/new-detail-routing.module').then(m => m.NewDetailRoutingModule)
-      }
+      },
+      {
+        path: routesPath.loggedin.detailRequirement,
+        loadChildren: () => import('./pages/detail-requirement/detail-requirement-routing.module').then(m => m.DetailRequirementRoutingModule)
+      },
 
     ]
   }

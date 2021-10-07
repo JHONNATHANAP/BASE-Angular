@@ -9,10 +9,11 @@ export const routesPath = {
         toDoMailbox: 'todomailbox',
         newDocument:'newdocument',
         newRequirement:'newrequirement',
-        detailRequirement:'detailrequirement',
+        detailRequest:"detailrequest",
         myData:"mydata",
         recentlyVisited:"recentlyvisited",
-        newDetail:"newdetail"
+        newDetail:"newdetail",
+        detailRequirement:'detailrequirement'
     },
     loggedout: {
         path: 'out',
@@ -58,9 +59,9 @@ export const menuOptions = [
     },
     {
         name: 'Detalle de Solicitud',
-        path: `./${routesPath.loggedin.detailRequirement}`,
+        path: `./${routesPath.loggedin.detailRequest}`,
         icon: { class: 'material-icons-outlined icons', name: 'assignment' }
-    },
+    },   
     {
         name: 'Mis datos',
         path: `./${routesPath.loggedin.myData}`,
@@ -75,6 +76,11 @@ export const menuOptions = [
         name: 'Ingreso Detalle',
         path: `./${routesPath.loggedin.newDetail}`,
         icon: { class: 'material-icons-outlined icons', name: 'open_in_new' }
+    },
+    {
+        name: 'Detalle de Requerimiento',
+        path: `./${routesPath.loggedin.detailRequirement}`,
+        icon: { class: 'material-icons-outlined icons', name: 'assignment' }
     },
     {
         name: 'login',

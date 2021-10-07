@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { DetailRequirementRoutingModule } from './detail-requirement-routing.module';
 import { DetailRequirementComponent } from './detail-requirement.component';
+import { ControlsModule, FormFieldModule } from '@app/shared/controls';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +13,11 @@ import { DetailRequirementComponent } from './detail-requirement.component';
   ],
   imports: [
     CommonModule,
-    DetailRequirementRoutingModule
+    DetailRequirementRoutingModule,
+    ControlsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    FormFieldModule,
   ]
 })
 export class DetailRequirementModule { }

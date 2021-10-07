@@ -4,35 +4,58 @@
         <div class="p-50 card solicitud">
 
             <div class="w-100 ">
-                <div class="title fl-justify-center">
-                    <h2>{{requirenment.title}}</h2>
-                </div>
+             
                 <div class="fl-row fl-justify-center">
-                    <div class=" fl-justify-center fl-al-item-center">
-                        <div class="img   ">
-                            <img src="../../../../../assets/img/tipos-pantalla.jpg" alt="">
-                        </div>
+                    <div class="content pl-25 pt-10 h-100">
+                        <h2>Tipo</h2>
+                        <p>{{requirenment.tipo}}</p>
+
+                        <h2>Categoría</h2>
+                        <p>{{requirenment.categoria}}</p>
+
+                        <h2>Tipo Compra</h2>
+                        <p>{{requirenment.tipoCompra}}</p>
+
+                        <h2>Tipo Adquisición</h2>
+                        <p>{{requirenment.tipoAdquisicion}}</p>
+
+                        <h2>Moneda</h2>
+                        <p>{{requirenment.moneda}}</p>
                     </div>
                     <div class="content pl-25 pt-10 h-100">
-                        <h2>Estado</h2>
-                        <p>{{requirenment.estado}}</p>
+                        <h2>Nombre compra</h2>
+                        <p>{{requirenment.nombreCompra}}</p>
 
-                        <h2>Materia</h2>
-                        <p>{{requirenment.materia}}</p>
+                        <h2>Objetivo</h2>
+                        <p>{{requirenment.objetivo}}</p>
 
-                        <h2>Glosa</h2>
-                        <p>{{requirenment.glosa}}</p>
+                        <h2>Especificaciones técnicas</h2>
+                        <p>{{requirenment.especificaciones}}</p>
 
-                        <h2>Autor</h2>
-                        <p>{{requirenment.autor}}</p>
+                        <h2>Recomendación</h2>
+                        <p>{{requirenment.recomendacion}}</p>
 
-                        <h2>Fechas relacionadas</h2>
-                        <p>
-                            <ng-container *ngFor="let op of  requirenment.fechas">
-                                {{op.title}} {{op.date}} <br>
-                            </ng-container>
-                        </p>
+                       
                     </div>
+                  
+                </div>
+                <div class=" w-100 r-0 p-20 fl-justify-center header input-number-container">
+                    <div class="input-number pl-20 pr-20">                       
+                        <app-form-field label="Variación" [isInline]="false">
+                            <app-input-number ></app-input-number>
+                        </app-form-field>
+                    </div>
+                    <div class="input-number pl-20 pr-20">                       
+                        <app-form-field label="% Ejecución" [isInline]="false">
+                            <app-input-number ></app-input-number>
+                        </app-form-field>
+                    </div>
+                    <div class="input-number pl-20 pr-20">                       
+                        <app-form-field label="Entregas" [isInline]="false">
+                            <app-input-number ></app-input-number>
+                        </app-form-field>
+                    </div>
+
                 </div>
             </div>
 
