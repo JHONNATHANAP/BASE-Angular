@@ -41,6 +41,7 @@
 /* Tamaño del scroll */
 .scroll ::-webkit-scrollbar {
     width: 10px;
+  
 }
 
 /* Estilos barra (thumb) de scroll */
@@ -67,4 +68,8 @@
 .scroll::-webkit-scrollbar-track:hover,
 .scroll::-webkit-scrollbar-track:active {
     background: #d4d4d4;
+}
+.mat-drawer-inner-container{
+    padding: 0 !important;
+    overflow: initial !important;
 }

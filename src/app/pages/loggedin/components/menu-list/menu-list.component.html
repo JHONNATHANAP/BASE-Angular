@@ -1,5 +1,5 @@
 <mat-nav-list>
-  <a *ngFor="let op of options" mat-list-item [routerLink]="op.path" (click)="closeMenu()">
+  <a *ngFor="let op of options" #link mat-list-item [routerLink]="op.path" (click)="closeMenu(link)" [ngClass]="{'active':link['_element']['nativeElement']['pathname']===router.url}">
     <span class="pr-10  {{op.icon.class }}">
       {{op.icon.name }}
     </span>

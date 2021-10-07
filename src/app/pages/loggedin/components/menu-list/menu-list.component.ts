@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { menuOptions } from '@app/const';
 import { UserResponse } from '@app/store/user';
 
@@ -15,12 +16,17 @@ export class MenuListComponent implements OnInit {
 
   @Output() signOut = new EventEmitter<void>();
   options=menuOptions;
-  constructor() { }
+  activeRoute:string="";
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
+    this.activeRoute=this.router.url;
+    console.log(this.router.url);
   }
 
-  closeMenu(): void{
+  closeMenu(op:any): void{
+
+    console.log(op['_element']['nativeElement']['pathname'],this.router.url)
     this.menuToggle.emit();
   }
 
