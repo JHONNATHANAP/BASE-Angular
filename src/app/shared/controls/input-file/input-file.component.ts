@@ -61,7 +61,7 @@ export class InputFileComponent implements OnInit {
     this.propagateTouched();
   }
   onFilesChanged(event:any){
-    console.log(event)
+    //console.log(event)
     this.value=event;
     this.valueText=this.value?  this.value[0].name:'';
     this.propagateChange(this.value);

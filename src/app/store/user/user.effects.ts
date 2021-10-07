@@ -60,14 +60,14 @@ export class UserEffects {
         this.httpClient.post<UserResponse>(apiUrls.api + apiUrls.login, credentials)
           .pipe(
             tap((response: UserResponse) => {
-              console.log(response)
+             // console.log(response)
               localStorage.setItem('token', response.token);
               this.router.navigate(['/']);
             }),
             map((response: UserResponse) => new fromActions.SignInEmailSuccess(response.id, response || null)),
             //catchError(err => of(new fromActions.SignInEmailError(err.message)))
             catchError(err => {
-              console.log(err)
+             // console.log(err)
               this.notification.error(err.status == 0 ? "Error desconocido" : "Credenciales incorrectas");
               return of(new fromActions.SignInEmailError(err.message))
 

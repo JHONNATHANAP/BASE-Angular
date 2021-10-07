@@ -26,10 +26,10 @@ export class WelcomeComponent implements OnInit {
         this.products = response.data;
       },
       error: (err:any) => {
-        console.log(err);
+        //console.log(err);
       },
       complete: () => {
-        console.log('completado');
+        //console.log('completado');
       }
     })
 

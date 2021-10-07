@@ -65,7 +65,7 @@ export class FilesUploadComponent implements OnInit {
 
     }
 
-    console.log(files);
+    //console.log(files);
     this.dialogRef.close(files);
 
   }

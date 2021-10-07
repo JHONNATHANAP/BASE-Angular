@@ -20,12 +20,12 @@ export function reducer(state=initialState, action: fromActions.All | any) : Log
     switch(action.type){
 
       case fromActions.Types.CHANGE: {
-        console.log({...state, loading: true, error: null, loggedin: action.loggedin})
+      //  console.log({...state, loading: true, error: null, loggedin: action.loggedin})
         return {...state, loading: true, error: null, loggedin: action.loggedin};
       }
 
       case fromActions.Types.READ: {
-        console.log({...state, loading: false, error: null, loggedin: action})
+       // console.log({...state, loading: false, error: null, loggedin: action})
         return {...state, loading: false, error: null, loggedin: action.loggedin};
       }
 

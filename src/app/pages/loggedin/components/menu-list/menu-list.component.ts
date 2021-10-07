@@ -16,17 +16,15 @@ export class MenuListComponent implements OnInit {
 
   @Output() signOut = new EventEmitter<void>();
   options=menuOptions;
-  activeRoute:string="";
+
   constructor(public router: Router) { }
 
   ngOnInit(): void {
-    this.activeRoute=this.router.url;
-    console.log(this.router.url);
+   
   }
 
   closeMenu(op:any): void{
 
-    console.log(op['_element']['nativeElement']['pathname'],this.router.url)
     this.menuToggle.emit();
   }
 

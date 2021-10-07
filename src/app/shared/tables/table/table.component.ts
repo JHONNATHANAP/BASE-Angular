@@ -24,7 +24,7 @@ export class TableComponent implements OnInit {
   ngOnInit(): void {
     this.dataSource = this.table.data
     this.displayedColumns = this.table.columns.map(c => c.columnDef);
-    console.log(this.table)
+    //console.log(this.table)
   }
 
 }

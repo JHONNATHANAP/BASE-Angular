@@ -130,7 +130,7 @@ export class SharedComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.form.value)
+    //console.log(this.form.value)
 
     if (!this.form.valid) {
       markFormGroupTouched(this.form);
@@ -162,7 +162,7 @@ export class SharedComponent implements OnInit {
   }
 
   onFilesChanged(urls: string | string[]): void {
-    console.log('urls', urls);
+    //console.log('urls', urls);
   }
 
 }
