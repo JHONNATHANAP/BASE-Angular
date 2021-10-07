@@ -1,41 +1,70 @@
-.app-page{
+.app-page {
     color: rgb(92, 92, 92);
 }
 @media only screen and (max-width: 800px) {
-    .checkboxes, .d-flex{
+    .checkboxes,
+    .d-flex {
         display: block !important;
     }
-    .form-container{
+    .form-container {
         width: 90% !important;
-     
-        .fl-row{
+
+        .fl-row {
             display: flex;
             flex-direction: column !important;
-            app-form-field{
+            app-form-field {
                 width: 100% !important;
                 margin: 0 !important;
                 padding: 0 !important;
             }
         }
-        
     }
-    .input-number-container{
+    .input-number-container {
         justify-content: space-between !important;
-        .input-number{
+        .input-number {
             padding: 0 !important;
-           
         }
     }
-    .solicitud{
-        .fl-row{
+    .solicitud {
+        .fl-row {
             display: flex;
             flex-direction: column !important;
-            app-form-field{
+            app-form-field {
                 width: 100% !important;
                 margin: 0 !important;
                 padding: 0 !important;
             }
         }
     }
-  
+}
+
+/* Tamaño del scroll */
+.scroll ::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Estilos barra (thumb) de scroll */
+.scroll::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 5px;
+}
+
+.scroll::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}
+
+.scroll::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos track de scroll */
+.scroll::-webkit-scrollbar-track {
+    background: #e1e1e1;
+    border-radius: 5px;
+}
+
+.scroll::-webkit-scrollbar-track:hover,
+.scroll::-webkit-scrollbar-track:active {
+    background: #d4d4d4;
 }

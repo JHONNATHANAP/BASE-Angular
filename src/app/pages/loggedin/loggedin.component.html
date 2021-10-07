@@ -1,14 +1,14 @@
 <app-header (signOut)="onSignOut()" (menuClicked)="menu.toggle()" [isAuthorized]="isAuthorized$ | async"
 [user]="user$ | async"></app-header>
-<mat-sidenav-container>
-    <mat-sidenav #menu role="navigation" [mode]="sideMode">
+<mat-sidenav-container class="scroll">
+    <mat-sidenav class="scroll" #menu role="navigation" [mode]="sideMode">
 
-        <app-menu-list (menuToggle)="menu.close()" (signOut)="onSignOut()" [isAuthorized]="isAuthorized$ | async"
+        <app-menu-list class="scroll" (menuToggle)="menu.close()" (signOut)="onSignOut()" [isAuthorized]="isAuthorized$ | async"
             [user]="user$ | async"></app-menu-list>
 
     </mat-sidenav>
 
-    <mat-sidenav-content>
+    <mat-sidenav-content class="scroll">
 
     
 
