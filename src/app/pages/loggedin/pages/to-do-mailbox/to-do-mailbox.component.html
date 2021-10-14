@@ -2,86 +2,7 @@
 
     <div class="app-page__content fl-justify-center w-100">
         <div class="form w-100 fl-justify-center fl-col">
-
-            <form [formGroup]="form" class="w-100 fl-al-item-center fl-col" (submit)="onSubmit()"
-                (keyup.enter)="onSubmit()" novalidate autocomplete="off">
-
-
-                <div class="w-60 fl-col">
-                    <div class="fl-row">
-                        <app-form-field class="pr-10 w-50" [control]="form.controls.folio">
-                            <app-material-input placeholder="Número de folio" formControlName="folio">
-                            </app-material-input>
-                        </app-form-field>
-
-                        <app-form-field class="pl-10 w-50" [control]="form.controls.documentType">
-                            <app-select placeholder="Tipo del Documento" label="label" value="value"
-                                formControlName="documentType" [items]="options" label="title" value="id"></app-select>
-                        </app-form-field>
-
-                    </div>
-
-
-                    <div class="fl-row">
-                        <app-form-field class="pr-10 w-50" [control]="form.controls.categoria">
-                            <app-select placeholder="Categoría del documento" label="label" value="value"
-                                formControlName="categoria" [items]="options" label="title" value="id"></app-select>
-                        </app-form-field>
-
-                        <app-form-field class="pl-10 w-50" [control]="form.controls.clasificacion">
-                            <app-select placeholder="Clasificación del Documento" label="label" value="value"
-                                formControlName="clasificacion" [items]="options" label="title" value="id"></app-select>
-                        </app-form-field>
-                    </div>
-
-
-                    <div class="fl-row">
-                        <app-form-field class=" pr-10 w-50" [control]="form.controls.range">
-                            <app-date-range formControlName="range"></app-date-range>
-                        </app-form-field>
-
-                        <app-form-field class="pl-10 w-50" [control]="form.controls.usuario">
-                            <app-material-input placeholder="Usuario" formControlName="usuario"></app-material-input>
-                        </app-form-field>
-                    </div>
-
-                    <app-form-field [control]="form.controls.rol">
-                        <app-material-input placeholder="Rol" formControlName="rol"></app-material-input>
-                    </app-form-field>
-
-                    <app-form-field [control]="form.controls.asunto">
-                        <app-material-input placeholder="Asunto" formControlName="asunto"></app-material-input>
-                    </app-form-field>
-
-                    <app-form-field [control]="form.controls.glosa">
-                        <app-material-input placeholder="Glosa" formControlName="glosa"></app-material-input>
-                    </app-form-field>
-                </div>
-
-
-
-
-                <div class="card w-100 r-0 p-20 fl-al-con-center fl-col header">
-                    <div class="fl-justify-center fl-al-item-center header__title p-0">
-                        <span class="pr-10 icon material-icons-outlined">
-                            task
-                        </span>
-                        <h3 class="title m-0">
-                            <div>Tipo de tarea</div>
-                        </h3>
-                    </div>
-                    <app-form-field [control]="form.controls.area" class="fl-justify-center fl-al-item-center w-100">
-                        <app-checkboxes [class]="'d-flex w-100'" label="title" value="id" formControlName="area"
-                            [items]="options">
-                        </app-checkboxes>
-                    </app-form-field>
-                </div>
-
-                <div class="pt-20">
-                    <app-button [class]="'secondary pr-35 pl-35'" type="submit">Buscar</app-button>
-                </div>
-
-            </form>
+            <app-form-generic [controls]="controls"></app-form-generic>
             <div class="w-100 fl-justify-center  pt-20">
                <div class="w-60 fl-justify-end">
                 <app-paginator ></app-paginator>
@@ -112,12 +33,18 @@
                                     <b>Creación:</b> {{item[col.columnDef].creacion}}<br>
                                     <b>Asunto:</b>{{item[col.columnDef].asunto }}<br>
                                 </ng-template>
-    
-                                <ng-template ngSwitchCase="acciones">
-                                    <a >Completar tarea</a> <br>
-                                    <a>Ver archivo</a> <br>
-                                    <a >Ir a documento</a>
-                                </ng-template>
+
+                                <ng-container *ngIf="table.actions && table.actions[0]" >
+                                    <ng-template ngSwitchCase="acciones">
+                                        <ng-container *ngFor="let action of table.actions" >
+                                            <a (click)="actionTable(action.event)" >{{action.title}}</a> <br>
+                                        </ng-container>
+                                   
+                                       <!--  <a>Ver archivo</a> <br>
+                                        <a >Ir a documento</a> -->
+                                    </ng-template>
+                                </ng-container>
+                              
                             </td>
                    
                         </ng-container>

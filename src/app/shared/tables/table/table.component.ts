@@ -3,10 +3,17 @@ import { Component, Input, OnInit } from '@angular/core';
 export interface TableModel {
   data: any[];
   columns: column[];
+  actions?:action[]
+
 }
 export interface column {
   columnDef: string;
   header: string;
+  columnFilter?:string;
+}
+export interface action {
+  title:string;
+  event:string;
 }
 @Component({
   selector: 'app-table',

@@ -13,47 +13,13 @@ import * as fromLoggedin from '@app/pages/loggedin/store/loggedin';
   styleUrls: ['./to-do-mailbox.component.scss']
 })
 export class ToDoMailboxComponent implements OnInit {
-  form !: FormGroup;
+
   loading$ !: Observable<boolean | null>;
   view: View = {
     title: "Buzón de tareas pendientes",
     icon: { class: "material-icons-outlined icons md-36", name: "drafts" }
   };
-
-  table: TableModel = {
-    columns: [
-      {
-        columnDef: 'checkbox',
-        header: ''
-      },
-      {
-        columnDef: 'tareas',
-        header: 'Tareas'
-      },
-      {
-        columnDef: 'folio',
-        header: 'Folio'
-      },
-      {
-        columnDef: 'documento',
-        header: 'Documento'
-      },
-      {
-        columnDef: 'acciones',
-        header: 'Acciones'
-      }
-    ],
-    data: [
-      { checkbox: { label: "", value: "1" }, tareas: 'Validación', folio: '2020-1345-temp', documento: { realizador: "ANDREA MARIN", creacion: '20/09/2020', asunto: 'Lorem ipsum dolor sit ament' }, acciones: '' },
-      { checkbox: { label: "", value: "1" }, tareas: 'Aprobación', folio: '2020-1345-temp', documento: { realizador: "ANDREA MARIN", creacion: '20/09/2020', asunto: 'Lorem ipsum dolor sit ament' }, acciones: '' },
-
-    ]
-  }
-
-  constructor(private store: Store<fromRoot.State>,
-    private fb: FormBuilder,) { }
-
-  options = [
+  options: any = [
     { id: 1, title: "Validacióna" },
     { id: 2, title: "Visación" },
     { id: 3, title: "Aprobación" },
@@ -61,72 +27,98 @@ export class ToDoMailboxComponent implements OnInit {
     { id: 5, title: "Gestor" },
     { id: 6, title: "Pago" },
   ]
+  controls: any[] = [
 
+  ]
+
+
+  table: TableModel = {
+    columns: [
+      {
+        columnDef: 'checkbox',
+        columnFilter: 'checkbox',
+        header: ''
+      },
+      {
+        columnDef: 'tareas',
+        columnFilter: 'tareas',
+        header: 'Tareas'
+      },
+      {
+        columnDef: 'folio',
+        columnFilter: 'folio',
+        header: 'Folio'
+      },
+      {
+        columnDef: 'documento',
+        columnFilter: 'documento',
+        header: 'Documento'
+      },
+      {
+        columnDef: 'acciones',
+        columnFilter: 'acciones',
+        header: 'Acciones'
+      }
+    ],
+    data: [
+      { checkbox: { label: "", value: "1" }, tareas: 'Validación', folio: '2020-1345-temp', documento: { realizador: "ANDREA MARIN", creacion: '20/09/2020', asunto: 'Lorem ipsum dolor sit ament' } },
+      { checkbox: { label: "", value: "1" }, tareas: 'Aprobación', folio: '2020-1345-temp', documento: { realizador: "ANDREA MARIN", creacion: '20/09/2020', asunto: 'Lorem ipsum dolor sit ament' } },
+
+    ],
+    actions: [
+      { title: "Completar tarea", event: 'completeTask' },
+      { title: "Ver archivo", event: 'showFile' },
+      { title: "Ir a documento", event: 'goToFile' },
+    ]
+  }
+
+  constructor(private store: Store<fromRoot.State>) { }
+
+  actionTable(event?: any) {
+    console.log(event)
+  }
   ngOnInit(): void {
     //this.loading$ = this.store.pipe(select(fromUser.getLoading));
+    this.controls = [
+      {
+        controlName: "folio", controlValue: null, placeholder: "Número de folio", validators: [Validators.required], class: "col-6", type: "text"
+      },
 
-    this.form = this.fb.group({
-      folio: [null, {
-        updateOn: 'change',
-        validators: [
+      {
+        controlName: "documentType", controlValue: null, placeholder: "Tipo del Documento", validators: [], class: "col-6", type: "select", optionValue: "id", optionLabel: "title", options: this.options
+      },
+      {
+        controlName: "categoria", controlValue: null, placeholder: "Categoría del documento", validators: [], class: "col-6", type: "select", optionValue: "id", optionLabel: "title", options: this.options
+      },
+      {
+        controlName: "clasificacion", controlValue: null, placeholder: "Clasificación del Documento", validators: [], class: "col-6", type: "select", optionValue: "id", optionLabel: "title", options: this.options
+      },
+      {
+        controlName: "range", controlValue: null, placeholder: "", validators: [], class: "col-6", type: "range"
+      },
+      {
+        controlName: "usuario", controlValue: null, placeholder: "Usuario", validators: [], class: "col-6", type: "text"
+      },
+      {
+        controlName: "rol", controlValue: null, placeholder: "Rol", validators: [], class: "col-12", type: "text"
+      },
+      {
+        controlName: "asunto", controlValue: null, placeholder: "Asunto", validators: [], class: "col-12", type: "text"
+      },
+      {
+        controlName: "glosa", controlValue: null, placeholder: "Glosa", validators: [], class: "col-12", type: "text"
+      },
+      {
+        controlName: "area", controlValue: null, placeholder: "Tipo de tarea", validators: [], class: "", type: "checkbox", optionValue: "id", optionLabel: "title", options: this.options
+      },
+    ]
 
-          Validators.maxLength(128)
-        ]
-      }],
-      area: [null, {
-        updateOn: 'change',
-        validators: [
-        ]
-      }],
-      documentType: [null, {
-        updateOn: 'change',
-        validators: [
-        ]
-      }],
-      categoria: [null, {
-        updateOn: 'change',
-        validators: [
-        ]
-      }],
-      clasificacion: [null, {
-        updateOn: 'change',
-        validators: [
-        ]
-      }],
-      range: [null, {
-        updateOn: 'change',
-        validators: [
-        ]
-      }],
-      usuario: [null, {
-        updateOn: 'change',
-        validators: [
-        ]
-      }],
-      rol: [null, {
-        updateOn: 'change',
-        validators: [
-        ]
-      }],
-      asunto: [null, {
-        updateOn: 'change',
-        validators: [
-        ]
-      }],
-      glosa: [null, {
-        updateOn: 'change',
-        validators: [
-        ]
-      }],
-    })
     const loggedin: fromLoggedin.Loggedin = {
       view: this.view
     }
     this.store.dispatch(new fromLoggedin.Change(loggedin));
   }
-  onSubmit() {
 
-  }
 
 
 }

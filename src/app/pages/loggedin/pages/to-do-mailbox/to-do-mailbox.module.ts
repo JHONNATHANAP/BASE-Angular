@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { NgModule } from '@angular/core';
+import { ControlsModule, SpinnerModule } from '@app/shared';
+import { TablesModule } from '@app/shared/tables';
+import { FormGenericModule } from '../../components/form-filters/form-generic.module';
 import { ToDoMailboxRoutingModule } from './to-do-mailbox-routing.module';
 import { ToDoMailboxComponent } from './to-do-mailbox.component';
-import { ButtonModule, ControlsModule, FormFieldModule, MaterialInputModule, SpinnerModule } from '@app/shared';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TablesModule } from '@app/shared/tables';
+
 
 
 @NgModule({
@@ -15,16 +15,11 @@ import { TablesModule } from '@app/shared/tables';
   imports: [
     CommonModule,
     ToDoMailboxRoutingModule,
-
-    FormsModule,
-    ReactiveFormsModule,
-    
-    FormFieldModule,
-    MaterialInputModule,
-    ButtonModule,
+   
     SpinnerModule,
     ControlsModule,
-    TablesModule
+    TablesModule,
+    FormGenericModule
   ]
 })
 export class ToDoMailboxModule { }

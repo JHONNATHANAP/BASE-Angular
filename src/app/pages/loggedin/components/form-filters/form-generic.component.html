@@ -1,0 +1,61 @@
+<form [formGroup]="form" class="w-100 fl-al-item-center fl-col" (submit)="onSubmit()" (keyup.enter)="onSubmit()"
+    novalidate autocomplete="off">
+
+
+    <div class="w-60 fl-col">
+        <div class="row">
+            <ng-container *ngFor="let control of controls" [ngSwitch]="control.type">
+                <app-form-field class="{{control.class}}" [control]="form.controls[control.controlName]">
+
+                    <ng-template ngSwitchCase="text">
+                        <app-material-input placeholder="{{control.placeholder}}"
+                            formControlName="{{control.controlName}}">
+                        </app-material-input>
+                    </ng-template>
+
+                    <ng-template ngSwitchCase="select">
+                        <app-select placeholder="{{control.placeholder}}" label="{{control.optionLabel}}"
+                            value="{{control.optionValue}}" formControlName="{{control.controlName}}"
+                            [items]="control.options"></app-select>
+                    </ng-template>
+
+
+                    <ng-template ngSwitchCase="range">
+                        <app-date-range formControlName="{{control.controlName}}"></app-date-range>
+                    </ng-template>
+
+                </app-form-field>
+            </ng-container>
+        </div>
+    </div>
+
+
+
+    <ng-container *ngFor="let control of controls" [ngSwitch]="control.type">
+        <ng-template ngSwitchCase="checkbox">
+            <div class="card w-100 r-0 p-20 fl-al-con-center fl-col header">
+                <div class="fl-justify-center fl-al-item-center header__title p-0">
+                    <span class="icon material-icons-outlined">
+                        task
+                    </span>
+                    <h3 class="title m-0">
+                        <div>{{control.placeholder}}</div>
+                    </h3>
+                </div>
+                <app-form-field  [control]="form.controls[control.controlName]" class="fl-justify-center fl-al-item-center w-100 {{control.class}}">
+                    <app-checkboxes [class]="'d-flex w-100'" label="{{control.optionLabel}}"
+                    value="{{control.optionValue}}" formControlName="{{control.controlName}}"
+                    [items]="control.options">
+                    </app-checkboxes>
+                </app-form-field>
+            </div>
+
+        </ng-template>
+    </ng-container>
+
+
+    <div class="pt-20">
+        <app-button [class]="'secondary pr-35 pl-35'" type="submit">Buscar</app-button>
+    </div>
+
+</form>
