@@ -1,10 +1,8 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { NgModule } from '@angular/core';
 import { NewDocumentRoutingModule } from './new-document-routing.module';
 import { NewDocumentComponent } from './new-document.component';
-import { ButtonModule, SpinnerModule, ControlsModule, FormFieldModule } from '@app/shared';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TemplateFormModule } from '@app/pages/loggedin/components/template-form/template-form.module';
 
 
 @NgModule({
@@ -14,13 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     NewDocumentRoutingModule,
-    
-    FormsModule,
-    ReactiveFormsModule,
-    FormFieldModule,
-    ButtonModule,
-    SpinnerModule,
-    ControlsModule,
+    TemplateFormModule
   ]
 })
 export class NewDocumentModule { }

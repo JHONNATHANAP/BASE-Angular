@@ -32,7 +32,7 @@ export class NewRequirementComponent implements OnInit {
         controlName: "adquisicionType", controlValue: null, placeholder: "Tipo del Adquisición", validators: [], class: "col-6", type: "select", optionValue: "id", optionLabel: "title", options: this.options
       },
       {
-        controlName: "moneyType", controlValue: null, placeholder: "Tipo de Moneda", validators: [], class: "col-12", type: "select"
+        controlName: "moneyType", controlValue: null, placeholder: "Tipo de Moneda", validators: [], class: "col-12", type: "select", optionValue: "id", optionLabel: "title", options: this.options
       },
       {
         controlName: "purchaseName", controlValue: null, placeholder: "Nombre de compra", validators: [], class: "col-6", type: "area", rows: "3"

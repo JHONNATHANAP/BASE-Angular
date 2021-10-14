@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class TemplateFormComponent implements OnInit {
   @Input('controls') controls!: any[];
-  @Input('class') class!: string;
+  @Input('class') class: string="w-100";
   @Output('onSubmit') submit = new EventEmitter<any>();
   constructor() { }
 

@@ -28,6 +28,11 @@
                         <app-text-area [rows]="control.rows" formControlName="{{control.controlName}}"placeholder="{{control.placeholder}}"></app-text-area>
                     </ng-template>
 
+                    <ng-template ngSwitchCase="file">
+                        <app-input-file formControlName="{{control.controlName}}"placeholder="{{control.placeholder}}"></app-input-file>
+                   
+                    </ng-template>
+
                 </app-form-field>
             </ng-container>
         </div>
