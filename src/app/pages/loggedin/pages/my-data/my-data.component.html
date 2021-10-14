@@ -51,48 +51,7 @@
             <div class="w-75 fl-col subrogancias">
                 <h3>Subrogancias</h3>
                 <div>
-                    <div class="w-100 fl-justify-center">
-                        <div class="w-100 fl-justify-end">
-                         <app-paginator ></app-paginator>
-                        </div>
-                     </div>
-                    <app-table  [table]="table">
-                        <tr *ngFor="let item of table.data">
-                            <ng-container *ngFor="let col of table.columns" [ngSwitch]="col.columnDef">
-                                <td class="p-25">
-                                
-        
-                                    <ng-template ngSwitchCase="estado">
-                                        {{item[col.columnDef]}}
-                                    </ng-template>
-    
-                                    <ng-template ngSwitchCase="rol">
-                                        {{item[col.columnDef]}}
-                                    </ng-template>
-    
-                                    <ng-template ngSwitchCase="dias">
-                                        {{item[col.columnDef]}}
-                                    </ng-template>
-    
-                                    <ng-template ngSwitchCase="fechaInicio">
-                                        {{item[col.columnDef]}}
-                                    </ng-template>
-    
-                                    <ng-template ngSwitchCase="fechaFin">
-                                        {{item[col.columnDef]}}
-                                    </ng-template>
-                                    
-                                    <ng-template ngSwitchCase="acciones">
-                                        {{item[col.columnDef]}}
-                                    </ng-template>
-        
-                                </td>
-                       
-                            </ng-container>
-    
-    
-                        </tr>
-                    </app-table>
+                    <app-table-generic [table]="table" (action)="onAction($event)" ></app-table-generic>  
                 </div>
             </div>
 

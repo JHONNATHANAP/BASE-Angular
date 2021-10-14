@@ -59,8 +59,8 @@ export class LoginComponent implements OnInit {
         email: value.email,
         password: value.password,
       }
-      this.router.navigate(['/in/profiles']);
-     // this.store.dispatch(new fromUser.SignInEmail(userLoginRequest));
+     // this.router.navigate(['/in/profiles']);
+      this.store.dispatch(new fromUser.SignInEmail(userLoginRequest));
 
     } else {
       markFormGroupTouched(this.form);

@@ -1,5 +1,5 @@
 <div class="w-100 fl-justify-center  pt-20">
-    <div class="w-60 fl-justify-end">
+    <div class="{{class}} fl-justify-end">
         <ng-container *ngIf="(table && table.data && table.data.length>0)">
             <app-paginator ></app-paginator>
         </ng-container>
@@ -7,9 +7,9 @@
     </div>
  </div>
  <div class="w-100 fl-justify-center">
-     <app-table class="w-60" [table]="table">
+     <app-table class="{{class}}" [table]="table">
          <tr *ngFor="let item of table.data">
-             <ng-container *ngFor="let col of table.columns" [ngSwitch]="col.columnDef">
+             <ng-container *ngFor="let col of table.columns" [ngSwitch]="col.type">
                  <td [ngClass]="{'tx-start':col.columnDef=='documento','tx-check':col.columnDef=='checkbox'}">
                      <ng-template ngSwitchCase="checkbox">
                          
@@ -17,23 +17,23 @@
                        
                      </ng-template>
 
-                     <ng-template ngSwitchCase="tareas">
+                     <ng-template ngSwitchCase="text">
                          {{item[col.columnDef]}}
                      </ng-template>
+                    
 
-                     <ng-template ngSwitchCase="folio">
-                         {{item[col.columnDef]}}
-                     </ng-template>
-
-                     <ng-template ngSwitchCase="documento">
-                         <b>Solicitud RRHH</b><br>
-                         <b>Realizador:</b> {{item[col.columnDef].realizador}} <br>
-                         <b>Creación:</b> {{item[col.columnDef].creacion}}<br>
-                         <b>Asunto:</b>{{item[col.columnDef].asunto }}<br>
+                     <ng-template ngSwitchCase="list">
+                         <b *ngIf="item[col.columnDef].title">{{item[col.columnDef].title}}</b><br>
+                         <ng-container  *ngIf="item[col.columnDef].data&&item[col.columnDef].data.length>0">
+                            <ng-container *ngFor="let cont of item[col.columnDef].data">
+                                <b>{{cont.title}}</b> {{cont.content}} <br>
+                            </ng-container>
+                          
+                         </ng-container>                       
                      </ng-template>
 
                      <ng-container *ngIf="table.actions && table.actions[0]" >
-                         <ng-template ngSwitchCase="acciones">
+                         <ng-template ngSwitchCase="actions">
                              <ng-container *ngFor="let action of table.actions" >
                                  <a (click)="actionTable(action.event,item)" >{{action.title}}</a> <br>
                              </ng-container>

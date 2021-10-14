@@ -10,6 +10,7 @@ export interface column {
   columnDef: string;
   header: string;
   columnFilter?:string;
+  type?:string;
 }
 export interface action {
   title:string;

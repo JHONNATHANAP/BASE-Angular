@@ -2,8 +2,8 @@
 
     <div class="app-page__content fl-justify-center w-100">
         <div class="form w-100 fl-justify-center fl-col">
-            <app-form-generic [controls]="controls" (onSubmit)="onSubmit($event)" [submitLabel]="'Buscar'"></app-form-generic>
-            <app-table-generic [table]="table" (action)="onAction($event)" ></app-table-generic>           
+            <app-form-generic [controls]="controls" (onSubmit)="onSubmit($event)" [submitLabel]="'Buscar'" ></app-form-generic>
+            <app-table-generic [table]="table" (action)="onAction($event)" [class]="'w-60'" ></app-table-generic>           
         </div>
     </div>
 </div>

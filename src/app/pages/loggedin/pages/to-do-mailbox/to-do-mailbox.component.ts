@@ -64,27 +64,32 @@ export class ToDoMailboxComponent implements OnInit {
         {
           columnDef: 'checkbox',
           columnFilter: 'checkbox',
-          header: ''
+          header: '',
+          type:'checkbox',
         },
         {
           columnDef: 'tareas',
           columnFilter: 'tareas',
-          header: 'Tareas'
+          header: 'Tareas',
+          type:'text',
         },
         {
           columnDef: 'folio',
           columnFilter: 'folio',
-          header: 'Folio'
+          header: 'Folio',
+          type:'text',
         },
         {
           columnDef: 'documento',
           columnFilter: 'documento',
-          header: 'Documento'
+          header: 'Documento',
+          type:'list',
         },
         {
           columnDef: 'acciones',
           columnFilter: 'acciones',
-          header: 'Acciones'
+          header: 'Acciones',
+          type:'actions',
         }
       ],
       data: [
@@ -98,8 +103,8 @@ export class ToDoMailboxComponent implements OnInit {
     }
 
     this.table.data = [
-      { checkbox: { label: "", value: "1" }, tareas: 'Validación', folio: '2020-1345-temp', documento: { realizador: "ANDREA MARIN", creacion: '20/09/2020', asunto: 'Lorem ipsum dolor sit ament' } },
-      { checkbox: { label: "", value: "1" }, tareas: 'Aprobación', folio: '2020-1345-temp', documento: { realizador: "ANDREA MARIN", creacion: '20/09/2020', asunto: 'Lorem ipsum dolor sit ament' } },
+      { checkbox: { label: "", value: "1" }, tareas: 'Validación', folio: '2020-1345-temp', documento: { title: "SOLICITUD RRHH",data:[{title:"Realizador: ",content:"ANDREA MARIN"},{title:"creación: ",content:"20/09/2020"},{title:"asunto: ",content:"Lorem ipsum dolor sit ament"}] } },
+      { checkbox: { label: "", value: "1" }, tareas: 'Aprobación', folio: '2020-1345-temp', documento: { title: "SOLICITUD RRHH",data:[{title:"Realizador: ",content:"ANDREA MARIN"},{title:"creación: ",content:"20/09/2020"},{title:"asunto: ",content:"Lorem ipsum dolor sit ament"}] }},
     ]
 
     this.utils.initView('todomailbox')

@@ -18,8 +18,8 @@ export class MyDataComponent implements OnInit {
       {name:"Usuario abastecimiento"},
       {name:"Jefe Unidad Administrativa"}],
     subrogancias:[
-      {estado:"En curso",rol:"Jefe de unidad",dias:"10",fechaInicio:"30/02/2020",fechaFin:"30/02/2020",acciones:'Finalizar'},
-      {estado:"Finalizado",rol:"Jefe Administrativo",dias:"5",fechaInicio:"30/02/2020",fechaFin:"30/02/2020",acciones:'Renovar'}
+      {estado:"En curso",rol:"Jefe de unidad",dias:"10",fechaInicio:"30/02/2020",fechaFin:"30/02/2020"},
+      {estado:"Finalizado",rol:"Jefe Administrativo",dias:"5",fechaInicio:"30/02/2020",fechaFin:"30/02/2020"}
     ]
   }
 
@@ -27,34 +27,54 @@ export class MyDataComponent implements OnInit {
     columns: [
       {
         columnDef: 'estado',
-        header: 'Estado'
+        columnFilter: 'estado',
+        header: 'Estado',
+        type:"text"
       },
       {
         columnDef: 'rol',
-        header: 'Rol'
+        columnFilter: 'rol',
+        header: 'Rol',
+        type:"text"
       },
       {
         columnDef: 'dias',
-        header: 'Días'
+        columnFilter: 'dias',
+        header: 'Días',
+        type:"text"
       },
       {
         columnDef: 'fechaInicio',
-        header: 'Fecha Inicio'
+        columnFilter: 'fechaInicio',
+        header: 'Fecha Inicio',
+        type:"text"
       },
       {
         columnDef: 'fechaFin',
-        header: 'Fecha Fin'
+        columnFilter: 'fechaFin',
+        header: 'Fecha Fin',
+        type:"text"
       },
       {
         columnDef: 'acciones',
-        header: 'Acciones'
+        columnFilter: 'acciones',
+        header: 'Acciones',
+        type:"actions"
       }
     ],
-    data:this.user.subrogancias
+    data:this.user.subrogancias,
+    actions: [
+      { title: "Completar tarea", event: 'completeTask' },
+      { title: "Ver archivo", event: 'showFile' },
+      { title: "Ir a documento", event: 'goToFile' },
+    ]
   }
   
   ngOnInit(): void {
     this.utils.initView('mydata');
+  }
+  onAction(event?: any) {
+    console.log(event)
   }
 
 }
