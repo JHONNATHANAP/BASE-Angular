@@ -99,7 +99,8 @@ export class ToDoMailboxComponent implements OnInit {
         { title: "Completar tarea", event: 'completeTask' },
         { title: "Ver archivo", event: 'showFile' },
         { title: "Ir a documento", event: 'goToFile' },
-      ]
+      ],
+      paginator:true
     }
 
     this.table.data = [

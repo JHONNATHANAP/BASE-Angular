@@ -3,7 +3,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export interface TableModel {
   data: any[];
   columns: column[];
-  actions?:action[]
+  actions?:action[];
+  paginator?:boolean;
 
 }
 export interface column {

@@ -1,9 +1,8 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { NgModule } from '@angular/core';
+import { TableGenericModule } from '@app/pages/loggedin/components/table-generic/table-generic.module';
 import { RecentlyVisitedRoutingModule } from './recently-visited-routing.module';
 import { RecentlyVisitedComponent } from './recently-visited.component';
-import { TablesModule } from '@app/shared/tables';
 
 
 @NgModule({
@@ -13,7 +12,7 @@ import { TablesModule } from '@app/shared/tables';
   imports: [
     CommonModule,
     RecentlyVisitedRoutingModule,
-    TablesModule
+    TableGenericModule
   ]
 })
 export class RecentlyVisitedModule { }

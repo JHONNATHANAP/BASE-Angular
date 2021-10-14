@@ -16,7 +16,8 @@ export class TableGenericComponent implements OnInit {
     ],
     actions: [
     
-    ]
+    ],
+    paginator:true
   }
   @Input('class') class: string="w-100";
   @Output('action') action = new EventEmitter<any>();

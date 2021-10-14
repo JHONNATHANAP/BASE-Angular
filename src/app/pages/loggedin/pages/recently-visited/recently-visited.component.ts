@@ -12,55 +12,67 @@ export class RecentlyVisitedComponent implements OnInit {
 
   table: TableModel = {
     columns: [
-    
+
       {
         columnDef: 'tareas',
-        header: 'Estado'
+        columnFilter: 'tareas',
+        header: 'Estado',
+        type: 'text',
       },
       {
         columnDef: 'folio',
-        header: 'Folio'
+        columnFilter: 'tareas',
+        header: 'Folio',
+        type: 'text',
       },
       {
         columnDef: 'documento',
-        header: 'Documento'
+        columnFilter: 'tareas',
+        header: 'Documento',
+        type: 'list',
       },
       {
         columnDef: 'acciones',
-        header: 'Acciones'
+        columnFilter: 'tareas',
+        header: 'Acciones',
+        type: 'actions',
       }
     ],
     data: [
-      {  tareas: 'Validación', folio: '2020-1345-temp', documento: { realizador: "ANDREA MARIN", creacion: '20/09/2020', asunto: 'Lorem ipsum dolor sit ament' }, acciones: '' },
-      { tareas: 'Aprobación', folio: '2020-1345-temp', documento: { realizador: "ANDREA MARIN", creacion: '20/09/2020', asunto: 'Lorem ipsum dolor sit ament' }, acciones: '' },
-
-    ]
+      { tareas: 'Validación', folio: '2020-1345-temp', documento: { title: "SOLICITUD RRHH", data: [{ title: "Realizador: ", content: "ANDREA MARIN" }, { title: "creación: ", content: "20/09/2020" }, { title: "asunto: ", content: "Lorem ipsum dolor sit ament" }] } },
+      { tareas: 'Aprobación', folio: '2020-1345-temp', documento: { title: "SOLICITUD RRHH", data: [{ title: "Realizador: ", content: "ANDREA MARIN" }, { title: "creación: ", content: "20/09/2020" }, { title: "asunto: ", content: "Lorem ipsum dolor sit ament" }] } },
+    ],
+    actions: [
+      { title: "Completar tarea", event: 'completeTask' },
+      { title: "Ver archivo", event: 'showFile' },
+      { title: "Ir a documento", event: 'goToFile' },
+    ],
+    paginator:true
   }
 
-  
+
   table2: TableModel = {
     columns: [
-    
+
       {
         columnDef: 'detalle',
-        header: 'Detalle feriado Legal'
+        columnFilter: 'checkbox',
+        header: 'Detalle feriado Legal',
+        type: 'list',
       }
-  
+
     ],
     data: [
-      {  detalle:""}
-
-    ]
+      { detalle:  {  data: [{ title: "Días disponibles: ", content: "12" }, { title: "Fecha desde: ", content: "24/06/2021" }, { title: "Fecha hasta: ", content: "25/07/2021" }, { title: "Solicitados: ", content: "5" }] } }
+    ],
+    paginator:false
   }
-  detalle={
-    disponibles:"12",
-    fechaDesde:"24/06/2021",
-    fechaHasta:"25/07/2021",
-    solicitados:"5"
 
-  }
   ngOnInit(): void {
     this.utils.initView('recentlyvisited');
+  }
+  onAction(event?: any) {
+    console.log(event)
   }
 
 }

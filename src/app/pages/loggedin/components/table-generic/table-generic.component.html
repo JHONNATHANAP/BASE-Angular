@@ -1,4 +1,4 @@
-<div class="w-100 fl-justify-center  pt-20">
+<div *ngIf="table.paginator"  class="w-100 fl-justify-center  pt-20">
     <div class="{{class}} fl-justify-end">
         <ng-container *ngIf="(table && table.data && table.data.length>0)">
             <app-paginator ></app-paginator>
@@ -10,8 +10,9 @@
      <app-table class="{{class}}" [table]="table">
          <tr *ngFor="let item of table.data">
              <ng-container *ngFor="let col of table.columns" [ngSwitch]="col.type">
-                 <td [ngClass]="{'tx-start':col.columnDef=='documento','tx-check':col.columnDef=='checkbox'}">
-                     <ng-template ngSwitchCase="checkbox">
+                 <td [ngClass]="{'tx-start':col.type=='list','tx-check':col.columnDef=='checkbox','feriado':col.columnDef=='detalle'}">
+                <div class="td-container" >
+                    <ng-template ngSwitchCase="checkbox">
                          
                         <app-checkbox [checkbox]="item[col.columnDef]"></app-checkbox>
                        
@@ -23,10 +24,15 @@
                     
 
                      <ng-template ngSwitchCase="list">
-                         <b *ngIf="item[col.columnDef].title">{{item[col.columnDef].title}}</b><br>
+                         <ng-container  *ngIf="item[col.columnDef].title">
+                            <b>{{item[col.columnDef].title}}</b><br>
+                         </ng-container>
+                       
                          <ng-container  *ngIf="item[col.columnDef].data&&item[col.columnDef].data.length>0">
                             <ng-container *ngFor="let cont of item[col.columnDef].data">
-                                <b>{{cont.title}}</b> {{cont.content}} <br>
+                         <div>
+                            <b>{{cont.title}}</b> {{cont.content}} <br>
+                         </div>
                             </ng-container>
                           
                          </ng-container>                       
@@ -42,6 +48,7 @@
                              <a >Ir a documento</a> -->
                          </ng-template>
                      </ng-container>
+                </div>
                    
                  </td>
         

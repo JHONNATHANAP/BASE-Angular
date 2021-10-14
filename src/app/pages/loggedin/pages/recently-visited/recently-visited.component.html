@@ -1,75 +1,15 @@
 <div class="app-page full-page fl-justify-center pl-0 pr-0">
-
+    
     <div class="app-page__content fl-justify-center w-100">
+        
         <div class="w-100 fl-justify-start fl-al-item-start fl-col">
             <div class="w-100 fl-justify-center">
-                <div class="w-50 fl-justify-end">
-                    <app-paginator></app-paginator>
-                </div>
+                <app-table-generic [table]="table" (action)="onAction($event)" [class]="'w-100'" class="w-50" ></app-table-generic>  
             </div>
-            <div class="w-100 fl-justify-center">
-                <app-table class="w-50" [table]="table">
-                    <tr *ngFor="let item of table.data">
-                        <ng-container *ngFor="let col of table.columns" [ngSwitch]="col.columnDef">
-                            <td
-                                [ngClass]="{'tx-start':col.columnDef=='documento','tx-check':col.columnDef=='checkbox'}">
-
-
-                                <ng-template ngSwitchCase="tareas">
-                                    {{item[col.columnDef]}}
-                                </ng-template>
-
-                                <ng-template ngSwitchCase="folio">
-                                    {{item[col.columnDef]}}
-                                </ng-template>
-
-                                <ng-template ngSwitchCase="documento">
-                                    <b>Solicitud RRHH</b><br>
-                                    <b>Realizador:</b> {{item[col.columnDef].realizador}} <br>
-                                    <b>Creación:</b> {{item[col.columnDef].creacion}}<br>
-                                    <b>Asunto:</b>{{item[col.columnDef].asunto }}<br>
-                                </ng-template>
-
-                                <ng-template ngSwitchCase="acciones">
-                                    <a>Completar tarea</a> <br>
-                                    <a>Ver archivo</a> <br>
-                                    <a>Ir a documento</a>
-                                </ng-template>
-                            </td>
-
-                        </ng-container>
-
-
-                    </tr>
-                </app-table>
-            </div>
-
-            <div class="w-100 fl-justify-center">
-                <app-table class="p-20" [table]="table2">
-                    <tr>
-                        <td>
-                            <div class=" detalle pl-40 pr-40 fl-col fl-al-item-start">
-                                <p>
-                                    <b>Días disponibles: </b>{{detalle.disponibles}}
-                                </p>
-                                <p>
-                                    <b>Fecha desde: </b>{{detalle.fechaDesde}}
-                                </p>
-                                <p>
-                                    <b>Fecha hasta: </b>{{detalle.fechaHasta}}
-                                </p>
-                                <p>
-                                    <b>Días solicitados: </b>{{detalle.solicitados}}
-                                </p>
-                            </div>
-
-
-                        </td>
-
-
-                    </tr>
-                </app-table>
-            </div>
+            <div class="w-100 fl-justify-center pt-20">
+                <app-table-generic [table]="table2"  ></app-table-generic>  
+            </div>        
+       
         </div>
 
     </div>
