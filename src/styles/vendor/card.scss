@@ -4,8 +4,8 @@
   @include shadow; 
 }
 
-.card {
-  @include card;
+.card-app {
+  @include card-app;
   width: fit-content;
 
 }

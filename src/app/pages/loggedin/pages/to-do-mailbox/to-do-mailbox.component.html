@@ -1,9 +1,1 @@
-<div class="app-page full-page fl-justify-center pl-0 pr-0">
-
-    <div class="app-page__content fl-justify-center w-100">
-        <div class="form w-100 fl-justify-center fl-col">
-            <app-form-generic [controls]="controls" (onSubmit)="onSubmit($event)" ></app-form-generic>
-            <app-table-generic [table]="table" (action)="onAction($event)" ></app-table-generic>           
-        </div>
-    </div>
-</div>
+<app-template-list [controls]="controls" (onSubmit)="onSubmit($event)" (action)="onAction($event)"  [table]="table"  ></app-template-list>
