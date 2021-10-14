@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { TableModel } from '@app/shared/tables/table/table.component';
 
 @Component({
@@ -18,9 +18,10 @@ export class TableGenericComponent implements OnInit {
     
     ]
   }
+  @Output('action') action = new EventEmitter<any>();
   constructor() { }
-  actionTable(event?: any) {
-    console.log(event)
+  actionTable(event?: string,data?:any) {   
+    this.action.emit({event:event,item:data});
   }
   ngOnInit(): void {
   }

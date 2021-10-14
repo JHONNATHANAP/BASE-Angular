@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { markFormGroupTouched } from '@app/shared';
 import { Observable } from 'rxjs';
@@ -13,7 +13,8 @@ export class FormGenericComponent implements OnInit {
   loading$ !: Observable<boolean | null>;
 
   constructor(private fb: FormBuilder,) { }
-  @Input('controls') controls:any[] = [ ]
+  @Input('controls') controls: any[] = []
+  @Output('onSubmit') submit = new EventEmitter<any>();
   ngOnInit(): void {
     var group: any = {};
 
@@ -32,6 +33,8 @@ export class FormGenericComponent implements OnInit {
   onSubmit() {
     if (!this.form.valid) {
       markFormGroupTouched(this.form);
+    } else {
+      this.submit.emit(this.form.value);
     }
   }
 

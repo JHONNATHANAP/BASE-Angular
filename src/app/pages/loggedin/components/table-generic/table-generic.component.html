@@ -35,7 +35,7 @@
                      <ng-container *ngIf="table.actions && table.actions[0]" >
                          <ng-template ngSwitchCase="acciones">
                              <ng-container *ngFor="let action of table.actions" >
-                                 <a (click)="actionTable(action.event)" >{{action.title}}</a> <br>
+                                 <a (click)="actionTable(action.event,item)" >{{action.title}}</a> <br>
                              </ng-container>
                         
                             <!--  <a>Ver archivo</a> <br>

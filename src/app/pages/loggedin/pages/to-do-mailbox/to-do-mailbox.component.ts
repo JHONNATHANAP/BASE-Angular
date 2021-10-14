@@ -20,7 +20,7 @@ export class ToDoMailboxComponent implements OnInit {
     icon: { class: "material-icons-outlined icons md-36", name: "drafts" }
   };
   options: any = [
-    { id: 1, title: "Validacióna" },
+    { id: 1, title: "Validación" },
     { id: 2, title: "Visación" },
     { id: 3, title: "Aprobación" },
     { id: 4, title: "Recepción" },
@@ -32,47 +32,14 @@ export class ToDoMailboxComponent implements OnInit {
   ]
 
 
-  table: TableModel = {
-    columns: [
-      {
-        columnDef: 'checkbox',
-        columnFilter: 'checkbox',
-        header: ''
-      },
-      {
-        columnDef: 'tareas',
-        columnFilter: 'tareas',
-        header: 'Tareas'
-      },
-      {
-        columnDef: 'folio',
-        columnFilter: 'folio',
-        header: 'Folio'
-      },
-      {
-        columnDef: 'documento',
-        columnFilter: 'documento',
-        header: 'Documento'
-      },
-      {
-        columnDef: 'acciones',
-        columnFilter: 'acciones',
-        header: 'Acciones'
-      }
-    ],
-    data: [
-
-    ],
-    actions: [
-      { title: "Completar tarea", event: 'completeTask' },
-      { title: "Ver archivo", event: 'showFile' },
-      { title: "Ir a documento", event: 'goToFile' },
-    ]
-  }
+  table!: TableModel;
 
   constructor(private store: Store<fromRoot.State>) { }
 
-  actionTable(event?: any) {
+  onAction(event?: any){
+    console.log(event)
+  }
+  onSubmit(event?: any){
     console.log(event)
   }
   ngOnInit(): void {
@@ -111,8 +78,47 @@ export class ToDoMailboxComponent implements OnInit {
       },
     ]
 
-    this.table.data = [{ checkbox: { label: "", value: "1" }, tareas: 'Validación', folio: '2020-1345-temp', documento: { realizador: "ANDREA MARIN", creacion: '20/09/2020', asunto: 'Lorem ipsum dolor sit ament' } },
-    { checkbox: { label: "", value: "1" }, tareas: 'Aprobación', folio: '2020-1345-temp', documento: { realizador: "ANDREA MARIN", creacion: '20/09/2020', asunto: 'Lorem ipsum dolor sit ament' } },
+    this.table = {
+      columns: [
+        {
+          columnDef: 'checkbox',
+          columnFilter: 'checkbox',
+          header: ''
+        },
+        {
+          columnDef: 'tareas',
+          columnFilter: 'tareas',
+          header: 'Tareas'
+        },
+        {
+          columnDef: 'folio',
+          columnFilter: 'folio',
+          header: 'Folio'
+        },
+        {
+          columnDef: 'documento',
+          columnFilter: 'documento',
+          header: 'Documento'
+        },
+        {
+          columnDef: 'acciones',
+          columnFilter: 'acciones',
+          header: 'Acciones'
+        }
+      ],
+      data: [
+
+      ],
+      actions: [
+        { title: "Completar tarea", event: 'completeTask' },
+        { title: "Ver archivo", event: 'showFile' },
+        { title: "Ir a documento", event: 'goToFile' },
+      ]
+    }
+
+    this.table.data = [
+      { checkbox: { label: "", value: "1" }, tareas: 'Validación', folio: '2020-1345-temp', documento: { realizador: "ANDREA MARIN", creacion: '20/09/2020', asunto: 'Lorem ipsum dolor sit ament' } },
+      { checkbox: { label: "", value: "1" }, tareas: 'Aprobación', folio: '2020-1345-temp', documento: { realizador: "ANDREA MARIN", creacion: '20/09/2020', asunto: 'Lorem ipsum dolor sit ament' } },
     ]
 
     const loggedin: fromLoggedin.Loggedin = {
