@@ -3,58 +3,7 @@
     <div class="app-page__content fl-justify-center w-100">
         <div class="form w-100 fl-justify-center fl-col">
             <app-form-generic [controls]="controls"></app-form-generic>
-            <div class="w-100 fl-justify-center  pt-20">
-               <div class="w-60 fl-justify-end">
-                <app-paginator ></app-paginator>
-               </div>
-            </div>
-            <div class="w-100 fl-justify-center">
-                <app-table class="w-60" [table]="table">
-                    <tr *ngFor="let item of table.data">
-                        <ng-container *ngFor="let col of table.columns" [ngSwitch]="col.columnDef">
-                            <td [ngClass]="{'tx-start':col.columnDef=='documento','tx-check':col.columnDef=='checkbox'}">
-                                <ng-template ngSwitchCase="checkbox">
-                                    
-                                   <app-checkbox [checkbox]="item[col.columnDef]"></app-checkbox>
-                                  
-                                </ng-template>
-    
-                                <ng-template ngSwitchCase="tareas">
-                                    {{item[col.columnDef]}}
-                                </ng-template>
-
-                                <ng-template ngSwitchCase="folio">
-                                    {{item[col.columnDef]}}
-                                </ng-template>
-    
-                                <ng-template ngSwitchCase="documento">
-                                    <b>Solicitud RRHH</b><br>
-                                    <b>Realizador:</b> {{item[col.columnDef].realizador}} <br>
-                                    <b>Creación:</b> {{item[col.columnDef].creacion}}<br>
-                                    <b>Asunto:</b>{{item[col.columnDef].asunto }}<br>
-                                </ng-template>
-
-                                <ng-container *ngIf="table.actions && table.actions[0]" >
-                                    <ng-template ngSwitchCase="acciones">
-                                        <ng-container *ngFor="let action of table.actions" >
-                                            <a (click)="actionTable(action.event)" >{{action.title}}</a> <br>
-                                        </ng-container>
-                                   
-                                       <!--  <a>Ver archivo</a> <br>
-                                        <a >Ir a documento</a> -->
-                                    </ng-template>
-                                </ng-container>
-                              
-                            </td>
-                   
-                        </ng-container>
-
-
-                    </tr>
-                </app-table>
-            </div>
+            <app-table-generic [table]="table" ></app-table-generic>           
         </div>
-
     </div>
-
 </div>

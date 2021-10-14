@@ -25,7 +25,8 @@ import { reducers } from './store';
   declarations: [
     LoggedinComponent,
     HeaderComponent,
-    MenuListComponent
+    MenuListComponent,
+    
     
   ],
   imports: [
