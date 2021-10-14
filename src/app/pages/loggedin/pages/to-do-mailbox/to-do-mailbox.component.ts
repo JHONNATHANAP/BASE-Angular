@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
-import { View } from '@app/models/frontend';
-import * as fromRoot from '@app/pages/loggedin/store';
-import * as fromLoggedin from '@app/pages/loggedin/store/loggedin';
 import { TableModel } from '@app/shared/tables/table/table.component';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { UtilsService } from '@app/pages/loggedin/utils/utils.service';
+import { dummyOptions } from '@app/const';
 
 @Component({
   selector: 'app-to-do-mailbox',
@@ -14,27 +11,11 @@ import { Observable } from 'rxjs';
 })
 export class ToDoMailboxComponent implements OnInit {
 
-  loading$ !: Observable<boolean | null>;
-  view: View = {
-    title: "Buzón de tareas pendientes",
-    icon: { class: "material-icons-outlined icons md-36", name: "drafts" }
-  };
-  options: any = [
-    { id: 1, title: "Validación" },
-    { id: 2, title: "Visación" },
-    { id: 3, title: "Aprobación" },
-    { id: 4, title: "Recepción" },
-    { id: 5, title: "Gestor" },
-    { id: 6, title: "Pago" },
-  ]
-  controls: any[] = [
-
-  ]
-
-
+  options: any = dummyOptions
+  controls: any[] = [];
   table!: TableModel;
 
-  constructor(private store: Store<fromRoot.State>) { }
+  constructor(private utils: UtilsService) { }
 
   onAction(event?: any){
     console.log(event)
@@ -121,10 +102,7 @@ export class ToDoMailboxComponent implements OnInit {
       { checkbox: { label: "", value: "1" }, tareas: 'Aprobación', folio: '2020-1345-temp', documento: { realizador: "ANDREA MARIN", creacion: '20/09/2020', asunto: 'Lorem ipsum dolor sit ament' } },
     ]
 
-    const loggedin: fromLoggedin.Loggedin = {
-      view: this.view
-    }
-    this.store.dispatch(new fromLoggedin.Change(loggedin));
+    this.utils.initView('todomailbox')
   }
 
 

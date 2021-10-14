@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { menuOptions } from '@app/const';
+import { views } from '@app/const';
 import { UserResponse } from '@app/store/user';
 
 @Component({
@@ -15,7 +15,7 @@ export class MenuListComponent implements OnInit {
   @Input() user !: UserResponse | null;
 
   @Output() signOut = new EventEmitter<void>();
-  options=menuOptions;
+  options=views;
 
   constructor(public router: Router) { }
 

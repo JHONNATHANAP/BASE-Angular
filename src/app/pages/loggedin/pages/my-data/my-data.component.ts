@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { View } from '@app/models/frontend';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import * as fromRoot from '@app/pages/loggedin/store';
-import * as fromLoggedin from '@app/pages/loggedin/store/loggedin';
+import { UtilsService } from '@app/pages/loggedin/utils/utils.service';
 import { TableModel } from '@app/shared/tables/table/table.component';
 @Component({
   selector: 'app-my-data',
@@ -11,12 +7,8 @@ import { TableModel } from '@app/shared/tables/table/table.component';
   styleUrls: ['./my-data.component.scss']
 })
 export class MyDataComponent implements OnInit {
-  view: View = {
-    title: "Mis datos",
-    icon: { class: "material-icons-outlined icons md-36", name: "assignment_ind" }
-  };
 
-  constructor(private store: Store<fromRoot.State>) { }
+  constructor(private utils: UtilsService) { }
   user={
     name:"Karen Paola Brio Monicada",
     document:"12.992.212-9",
@@ -62,10 +54,7 @@ export class MyDataComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    const loggedin: fromLoggedin.Loggedin = {
-      view: this.view
-    }
-    this.store.dispatch(new fromLoggedin.Change(loggedin));
+    this.utils.initView('mydata');
   }
 
 }

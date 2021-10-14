@@ -1,108 +1,65 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { View } from '@app/models/frontend';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import * as fromRoot from '@app/pages/loggedin/store';
-import * as fromLoggedin from '@app/pages/loggedin/store/loggedin';
+import { Validators } from '@angular/forms';
+import { dummyOptions } from '@app/const';
+import { UtilsService } from '@app/pages/loggedin/utils/utils.service';
 @Component({
   selector: 'app-new-requirement',
   templateUrl: './new-requirement.component.html',
   styleUrls: ['./new-requirement.component.scss']
 })
 export class NewRequirementComponent implements OnInit {
-  form !: FormGroup;
-  loading$ !: Observable<boolean | null>;
-  view: View = {
-    title: "Ingreso Requerimiento",
-    icon: { class: "material-icons-outlined icons md-36", name: "edit" }
-  };
-  options = [
-    { id: 1, title: "Validacióna" },
-    { id: 2, title: "Visación" },
-    { id: 3, title: "Aprobación" },
-    { id: 4, title: "Recepción" },
-    { id: 5, title: "Gestor" },
-    { id: 6, title: "Pago" },
-  ]
 
-  constructor(private store: Store<fromRoot.State>,
-    private fb: FormBuilder,) { }
+
+  options = dummyOptions;
+  controls: any[] = []
+
+  constructor(private utils: UtilsService) { }
 
   ngOnInit(): void {
 
-    this.form = this.fb.group({
-     
-      requirementType: [null, {
-        updateOn: 'change',
-        validators: [
-        ]
-      }],
-      purchaseType: [null, {
-        updateOn: 'change',
-        validators: [
-        ]
-      }],
-      category: [null, {
-        updateOn: 'change',
-        validators: [
-        ]
-      }],
-      adquisicionType: [null, {
-        updateOn: 'change',
-        validators: [
-        ]
-      }],
-      moneyType: [null, {
-        updateOn: 'change',
-        validators: [
-        ]
-      }],
-      purchaseName: [null, {
-        updateOn: 'change',
-        validators: [
-        ]
-      }],
-      specification: [null, {
-        updateOn: 'change',
-        validators: [
-        ]
-      }],
-      objetive: [null, {
-        updateOn: 'change',
-        validators: [
-        ]
-      }],
-      recomendation: [null, {
-        updateOn: 'change',
-        validators: [
-        ]
-      }],
-      variation: [null, {
-        updateOn: 'change',
-        validators: [
-        ]
-      }],
-      ejecution: [null, {
-        updateOn: 'change',
-        validators: [
-        ]
-      }],
-      deliveries: [null, {
-        updateOn: 'change',
-        validators: [
-        ]
-      }],
-    })
+    this.controls = [
+      {
+        controlName: "requirementType", controlValue: null, placeholder: "Tipo de Requerimiento", validators: [Validators.required], class: "col-6", type: "select", optionValue: "id", optionLabel: "title", options: this.options
+      },
 
+      {
+        controlName: "purchaseType", controlValue: null, placeholder: "Tipo de Compra", validators: [], class: "col-6", type: "select", optionValue: "id", optionLabel: "title", options: this.options
+      },
+      {
+        controlName: "category", controlValue: null, placeholder: "Categoría de Requerimiento", validators: [], class: "col-6", type: "select", optionValue: "id", optionLabel: "title", options: this.options
+      },
+      {
+        controlName: "adquisicionType", controlValue: null, placeholder: "Tipo del Adquisición", validators: [], class: "col-6", type: "select", optionValue: "id", optionLabel: "title", options: this.options
+      },
+      {
+        controlName: "moneyType", controlValue: null, placeholder: "Tipo de Moneda", validators: [], class: "col-12", type: "select"
+      },
+      {
+        controlName: "purchaseName", controlValue: null, placeholder: "Nombre de compra", validators: [], class: "col-6", type: "area", rows: "3"
+      },
+      {
+        controlName: "specification", controlValue: null, placeholder: "Especificaciones Técnicas", validators: [], class: "col-6", type: "area", rows: "3"
+      },
+      {
+        controlName: "objetive", controlValue: null, placeholder: "Objetivo", validators: [], class: "col-6", type: "area", rows: "3"
+      },
+      {
+        controlName: "recomendation", controlValue: null, placeholder: "Recomendación", validators: [], class: "col-6", type: "area", rows: "3"
+      },
+      {
+        controlName: "variation", controlValue: null, placeholder: "Glosa", validators: [], class: "", type: "indicators"
+      },
+      {
+        controlName: "ejecution", controlValue: null, placeholder: "% Ejecución", validators: [], class: "", type: "indicators"
+      },
+      {
+        controlName: "deliveries", controlValue: null, placeholder: "Entregas", validators: [], class: "", type: "indicators"
+      },
+    ]
 
-
-    const loggedin: fromLoggedin.Loggedin = {
-      view: this.view
-    }
-    this.store.dispatch(new fromLoggedin.Change(loggedin));
+    this.utils.initView('newrequirement');
   }
-  onSubmit() {
-
+  onSubmit(event: any) {
+    console.log(event)
   }
 }

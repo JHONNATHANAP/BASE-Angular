@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { View } from '@app/models/frontend';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import * as fromRoot from '@app/pages/loggedin/store';
-import * as fromLoggedin from '@app/pages/loggedin/store/loggedin';
+import { UtilsService } from '@app/pages/loggedin/utils/utils.service';
 @Component({
   selector: 'app-detail-requirement',
   templateUrl: './detail-requirement.component.html',
@@ -11,7 +7,7 @@ import * as fromLoggedin from '@app/pages/loggedin/store/loggedin';
 })
 export class DetailRequirementComponent implements OnInit {
 
-  constructor(private store: Store<fromRoot.State>) { }
+  constructor(private utils: UtilsService) { }
 
   requirenment = {
     tipo: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut",
@@ -29,15 +25,9 @@ export class DetailRequirementComponent implements OnInit {
 
   }
 
-  view: View = {
-    title: "Detalle de Requerimiento",
-    icon: { class: "material-icons-outlined icons md-36", name: "assignment" }
-  };
+
   ngOnInit(): void {
-    const loggedin: fromLoggedin.Loggedin = {
-      view: this.view
-    }
-    this.store.dispatch(new fromLoggedin.Change(loggedin));
+    this.utils.initView('detailrequirement');
   }
 
 }

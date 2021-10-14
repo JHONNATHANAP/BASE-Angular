@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { View } from '@app/models/frontend';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { dummyOptions } from '@app/const';
 import * as fromRoot from '@app/pages/loggedin/store';
-import * as fromLoggedin from '@app/pages/loggedin/store/loggedin';
+import { UtilsService } from '@app/pages/loggedin/utils/utils.service';
+import { Store } from '@ngrx/store';
 @Component({
   selector: 'app-new-document',
   templateUrl: './new-document.component.html',
@@ -12,21 +11,11 @@ import * as fromLoggedin from '@app/pages/loggedin/store/loggedin';
 })
 export class NewDocumentComponent implements OnInit {
   form !: FormGroup;
-  loading$ !: Observable<boolean | null>;
-  view: View = {
-    title: "Ingreso Documento",
-    icon: { class: "material-icons-outlined icons md-36", name: "article" }
-  };
-  options = [
-    { id: 1, title: "Validacióna" },
-    { id: 2, title: "Visación" },
-    { id: 3, title: "Aprobación" },
-    { id: 4, title: "Recepción" },
-    { id: 5, title: "Gestor" },
-    { id: 6, title: "Pago" },
-  ]
 
-  constructor(private store: Store<fromRoot.State>,
+
+  options = dummyOptions;
+
+  constructor(private utils: UtilsService,private store: Store<fromRoot.State>,
     private fb: FormBuilder,) { }
 
   ngOnInit(): void {
@@ -66,10 +55,7 @@ export class NewDocumentComponent implements OnInit {
     })
 
 
-    const loggedin: fromLoggedin.Loggedin = {
-      view: this.view
-    }
-    this.store.dispatch(new fromLoggedin.Change(loggedin));
+    this.utils.initView('newdocument');
   }
   onSubmit() {
 

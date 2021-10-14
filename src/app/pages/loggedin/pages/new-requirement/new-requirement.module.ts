@@ -5,6 +5,8 @@ import { NewRequirementRoutingModule } from './new-requirement-routing.module';
 import { NewRequirementComponent } from './new-requirement.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormFieldModule, ButtonModule, SpinnerModule, ControlsModule } from '@app/shared';
+import { FormGenericModule } from '../../components/form-filters/form-generic.module';
+import { TemplateFormModule } from '../../components/template-form/template-form.module';
 
 
 @NgModule({
@@ -14,12 +16,7 @@ import { FormFieldModule, ButtonModule, SpinnerModule, ControlsModule } from '@a
   imports: [
     CommonModule,
     NewRequirementRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    FormFieldModule,
-    ButtonModule,
-    SpinnerModule,
-    ControlsModule,
+    TemplateFormModule
   ]
 })
 export class NewRequirementModule { }

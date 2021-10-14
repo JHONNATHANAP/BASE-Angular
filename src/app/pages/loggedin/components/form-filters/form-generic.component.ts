@@ -14,6 +14,7 @@ export class FormGenericComponent implements OnInit {
 
   constructor(private fb: FormBuilder,) { }
   @Input('controls') controls: any[] = []
+  @Input('submitLabel') submitLabel: string="Guardar";
   @Output('onSubmit') submit = new EventEmitter<any>();
   ngOnInit(): void {
     var group: any = {};

@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { View } from '@app/models/frontend';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import * as fromRoot from '@app/pages/loggedin/store';
-import * as fromLoggedin from '@app/pages/loggedin/store/loggedin';
+import { UtilsService } from '@app/pages/loggedin/utils/utils.service';
 import { TableModel } from '@app/shared/tables/table/table.component';
 @Component({
   selector: 'app-recently-visited',
@@ -12,11 +8,7 @@ import { TableModel } from '@app/shared/tables/table/table.component';
 })
 export class RecentlyVisitedComponent implements OnInit {
 
-  constructor(private store: Store<fromRoot.State>) { }
-  view: View = {
-    title: "Visitados Recientemente",
-    icon: { class: "material-icons-outlined icons md-36", name: "visibility" }
-  };
+  constructor(private utils: UtilsService) { }
 
   table: TableModel = {
     columns: [
@@ -68,10 +60,7 @@ export class RecentlyVisitedComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    const loggedin: fromLoggedin.Loggedin = {
-      view: this.view
-    }
-    this.store.dispatch(new fromLoggedin.Change(loggedin));
+    this.utils.initView('recentlyvisited');
   }
 
 }

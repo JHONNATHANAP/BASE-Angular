@@ -1,25 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { View } from '@app/models/frontend';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import * as fromRoot from '@app/pages/loggedin/store';
-import * as fromLoggedin from '@app/pages/loggedin/store/loggedin';
+import { UtilsService } from '@app/pages/loggedin/utils/utils.service';
+import { Store } from '@ngrx/store';
 @Component({
   selector: 'app-new-detail',
   templateUrl: './new-detail.component.html',
   styleUrls: ['./new-detail.component.scss']
 })
 export class NewDetailComponent implements OnInit {
-  view: View = {
-    title: "Ingreso Detalle",
-    icon: { class: "material-icons-outlined icons md-36", name: "open_in_new" }
-  };
+
 
   form !: FormGroup;
   diasDisponibles:number=15;
   diasSolicitados:number=15;
-  constructor(private store: Store<fromRoot.State>,
+  constructor(private utils: UtilsService,private store: Store<fromRoot.State>,
     private fb: FormBuilder,) { }
 
   ngOnInit(): void {
@@ -38,10 +33,7 @@ export class NewDetailComponent implements OnInit {
     
     })
 
-    const loggedin: fromLoggedin.Loggedin = {
-      view: this.view
-    }
-    this.store.dispatch(new fromLoggedin.Change(loggedin));
+    this.utils.initView('newdetail');
   }
   onSubmit() {
 

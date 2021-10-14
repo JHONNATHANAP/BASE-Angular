@@ -7,13 +7,13 @@ export const routesPath = {
         exampleForm: 'example-form',
         userProfiles: 'profiles',
         toDoMailbox: 'todomailbox',
-        newDocument:'newdocument',
-        newRequirement:'newrequirement',
-        detailRequest:"detailrequest",
-        myData:"mydata",
-        recentlyVisited:"recentlyvisited",
-        newDetail:"newdetail",
-        detailRequirement:'detailrequirement'
+        newDocument: 'newdocument',
+        newRequirement: 'newrequirement',
+        detailRequest: "detailrequest",
+        myData: "mydata",
+        recentlyVisited: "recentlyvisited",
+        newDetail: "newdetail",
+        detailRequirement: 'detailrequirement'
     },
     loggedout: {
         path: 'out',
@@ -35,56 +35,75 @@ export const apiUrls = {
     login: "/login"
 }
 
-export const menuOptions = [
- 
+export const dummyOptions = [
+    { id: 1, title: "Validación" },
+    { id: 2, title: "Visación" },
+    { id: 3, title: "Aprobación" },
+    { id: 4, title: "Recepción" },
+    { id: 5, title: "Gestor" },
+    { id: 6, title: "Pago" },
+]
+
+export const views = [
+
     {
-        name: 'Perfiles',
+        title: 'Perfiles',
         path: `./${routesPath.loggedin.userProfiles}`,
-        icon: { class: 'material-icons-outlined icons', name: 'people_outline' }
+        icon: { class: 'material-icons-outlined icons', name: 'people_outline' },
+        view: 'profiles'
     },
     {
-        name: 'Buzón',
+        title: 'Buzón de tareas pendientes',
         path: `./${routesPath.loggedin.toDoMailbox}`,
-        icon: { class: 'material-icons-outlined icons', name: 'drafts' }
+        icon: { class: 'material-icons-outlined icons', name: 'drafts' },
+        view: 'todomailbox'
     },
     {
-        name: 'Ingreso Documento',
+        title: 'Ingreso Documento',
         path: `./${routesPath.loggedin.newDocument}`,
-        icon: { class: 'material-icons-outlined icons', name: 'article' }
+        icon: { class: 'material-icons-outlined icons', name: 'article' },
+        view: 'newdocument'
     },
     {
-        name: 'Ingreso Requerimiento',
+        title: 'Ingreso Requerimiento',
         path: `./${routesPath.loggedin.newRequirement}`,
-        icon: { class: 'material-icons-outlined icons', name: 'edit' }
+        icon: { class: 'material-icons-outlined icons', name: 'edit' },
+        view: 'newrequirement'
     },
     {
-        name: 'Detalle de Solicitud',
+        title: 'Detalle de Solicitud',
         path: `./${routesPath.loggedin.detailRequest}`,
-        icon: { class: 'material-icons-outlined icons', name: 'assignment' }
-    },   
+        icon: { class: 'material-icons-outlined icons', name: 'assignment' },
+        view: 'detailrequest'
+    },
     {
-        name: 'Mis datos',
+        title: 'Mis datos',
         path: `./${routesPath.loggedin.myData}`,
-        icon: { class: 'material-icons-outlined icons', name: 'assignment_ind' }
+        icon: { class: 'material-icons-outlined icons', name: 'assignment_ind' },
+        view: 'mydata'
     },
     {
-        name: 'Visitados Recientemente',
+        title: 'Visitados Recientemente',
         path: `./${routesPath.loggedin.recentlyVisited}`,
-        icon: { class: 'material-icons-outlined icons', name: 'visibility' }
+        icon: { class: 'material-icons-outlined icons', name: 'visibility' },
+        view: 'recentlyvisited'
     },
     {
-        name: 'Ingreso Detalle',
+        title: 'Ingreso Detalle',
         path: `./${routesPath.loggedin.newDetail}`,
-        icon: { class: 'material-icons-outlined icons', name: 'open_in_new' }
+        icon: { class: 'material-icons-outlined icons', name: 'open_in_new' },
+        view: 'newdetail'
     },
     {
-        name: 'Detalle de Requerimiento',
+        title: 'Detalle de Requerimiento',
         path: `./${routesPath.loggedin.detailRequirement}`,
-        icon: { class: 'material-icons-outlined icons', name: 'assignment' }
+        icon: { class: 'material-icons-outlined icons', name: 'assignment' },
+        view: 'detailrequirement'
     },
     {
-        name: 'login',
+        title: 'login',
         path: `../${routesPath.loggedout.path}/${routesPath.loggedout.login}`,
-        icon: { class: 'material-icons', name: 'login' }
+        icon: { class: 'material-icons', name: 'login' },
+        view: 'login'
     }
 ]
