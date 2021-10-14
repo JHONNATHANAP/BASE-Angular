@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Validators } from '@angular/forms';
 import { View } from '@app/models/frontend';
+import * as fromRoot from '@app/pages/loggedin/store';
+import * as fromLoggedin from '@app/pages/loggedin/store/loggedin';
 import { TableModel } from '@app/shared/tables/table/table.component';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import * as fromRoot from '@app/pages/loggedin/store';
-import * as fromLoggedin from '@app/pages/loggedin/store/loggedin';
 
 @Component({
   selector: 'app-to-do-mailbox',
@@ -61,8 +61,6 @@ export class ToDoMailboxComponent implements OnInit {
       }
     ],
     data: [
-      { checkbox: { label: "", value: "1" }, tareas: 'Validación', folio: '2020-1345-temp', documento: { realizador: "ANDREA MARIN", creacion: '20/09/2020', asunto: 'Lorem ipsum dolor sit ament' } },
-      { checkbox: { label: "", value: "1" }, tareas: 'Aprobación', folio: '2020-1345-temp', documento: { realizador: "ANDREA MARIN", creacion: '20/09/2020', asunto: 'Lorem ipsum dolor sit ament' } },
 
     ],
     actions: [
@@ -111,6 +109,10 @@ export class ToDoMailboxComponent implements OnInit {
       {
         controlName: "area", controlValue: null, placeholder: "Tipo de tarea", validators: [], class: "", type: "checkbox", optionValue: "id", optionLabel: "title", options: this.options
       },
+    ]
+
+    this.table.data = [{ checkbox: { label: "", value: "1" }, tareas: 'Validación', folio: '2020-1345-temp', documento: { realizador: "ANDREA MARIN", creacion: '20/09/2020', asunto: 'Lorem ipsum dolor sit ament' } },
+    { checkbox: { label: "", value: "1" }, tareas: 'Aprobación', folio: '2020-1345-temp', documento: { realizador: "ANDREA MARIN", creacion: '20/09/2020', asunto: 'Lorem ipsum dolor sit ament' } },
     ]
 
     const loggedin: fromLoggedin.Loggedin = {

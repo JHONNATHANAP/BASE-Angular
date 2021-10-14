@@ -18,8 +18,6 @@ import { ToDoMailboxComponent } from './to-do-mailbox.component';
     ToDoMailboxRoutingModule,
    
     SpinnerModule,
-    ControlsModule,
-    TablesModule,
     FormGenericModule,
     TableGenericModule
   ]
