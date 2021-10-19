@@ -51,7 +51,7 @@ export class SignInEmail implements Action {
 
 export class SignInEmailSuccess implements Action {
   readonly type = Types.SIGIN_IN_EMAIL_SUCCESS;
-  constructor(public id: string, public user: UserResponse | null){}
+  constructor( public user: UserResponse | null){}
 }
 
 export class SignInEmailError implements Action {
@@ -59,22 +59,6 @@ export class SignInEmailError implements Action {
   constructor(public error: string){}
 }
 
-
-//SIGNUP O REGISTRO DE NUEVO USUARIO
-export class SignUpEmail  implements Action {
-  readonly type = Types.SIGN_UP_EMAIL;
-  constructor(public user: UserCreateRequest){}
-}
-
-export class SignUpEmailSuccess  implements Action {
-  readonly type = Types.SIGN_UP_EMAIL_SUCCESS;
-  constructor(public id: string, public user: UserResponse | null){}
-}
-
-export class SignUpEmailError  implements Action {
-  readonly type = Types.SIGN_UP_EMAIL_ERROR;
-  constructor(public error: string){}
-}
 
 //SIGN OUT O SALIR DE SESION
 export class SignOut implements Action{
@@ -101,9 +85,6 @@ export type All =
     | SignInEmail
     | SignInEmailSuccess
     | SignInEmailError
-    | SignUpEmail
-    | SignUpEmailSuccess
-    | SignUpEmailError
     | SignOut
     | SignOutSuccess
     | SignOutError;

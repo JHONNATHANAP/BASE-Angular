@@ -1,9 +1,10 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { apiUrls } from "@app/const";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { environment } from "@src/environments/environment";
 import { Observable, of, zip } from "rxjs";
-import { catchError, map, switchMap } from "rxjs/operators";
+import { catchError, map, tap, switchMap } from "rxjs/operators";
 import * as fromActions from './dictionaries.actions';
 import { Dictionaries, Dictionary, Item, ControlItem } from './dictionaries.models';
 
@@ -47,27 +48,13 @@ export class DictionariesEffects {
   read: Observable<Action> = createEffect(() =>
     this.actions.pipe(
       ofType(fromActions.Types.READ),
-      switchMap(() => {
-        return zip(
-          this.httpclient.get<ModelItem[]>(`${environment.url}/api/categoria`)
-            .pipe(
-              map((items) => items.map((x) => modelToItem(x)))
-            ),
-          this.httpclient.get<ModelItem[]>(`${environment.url}/api/marca`)
-            .pipe(
-              map((items) => items.map((x) => modelToItem(x)))
-            )
-        ).pipe(
-          map(([categories, marca]) => {
-            const dictionaries: Dictionaries = {
-              categories: addDictionary(categories),
-              marca: addDictionary(marca)
-            };
-            return new fromActions.ReadSuccess(dictionaries);
-          }),
-          catchError(err => of(new fromActions.ReadError(err.message)))
-        )
-      })
+      switchMap(() =>
+        this.httpclient.get<ModelItem[]>(apiUrls.api + apiUrls.documentos)
+          .pipe(
+            map((response: any) => new fromActions.ReadSuccess(response))
+          )
+     
+      )
     )
   );
 }

@@ -13,7 +13,13 @@ export const routesPath = {
         myData: "mydata",
         recentlyVisited: "recentlyvisited",
         newDetail: "newdetail",
-        detailRequirement: 'detailrequirement'
+        detailRequirement: 'detailrequirement',
+        myshares:"myshares",
+        mydocuments:"mydocuments",
+        documentswithresponsetime:"documentswithresponsetime",
+        documentssearch:"documentssearch",
+        inbox:"inbox",
+        outbox:"outbox"
     },
     loggedout: {
         path: 'out',
@@ -32,7 +38,9 @@ export const routesPath = {
 
 export const apiUrls = {
     api: environment.url,
-    login: "/login"
+    login: "/login",
+    documentos:"/documentos",
+    tiposDocumentos:"tipos-documentos"
 }
 
 export const dummyOptions = [
@@ -99,6 +107,42 @@ export const views = [
         path: `./${routesPath.loggedin.detailRequirement}`,
         icon: { class: 'material-icons-outlined icons', name: 'assignment' },
         view: 'detailrequirement'
+    },
+    {
+        title: 'Mis Participaciones',
+        path: `./${routesPath.loggedin.myshares}`,
+        icon: { class: 'material-icons-outlined icons', name: 'view_list' },
+        view: 'myshares'
+    },
+    {
+        title: 'Mis Documentos',
+        path: `./${routesPath.loggedin.mydocuments}`,
+        icon: { class: 'material-icons-outlined icons', name: 'view_list' },
+        view: 'mydocuments'
+    },
+    {
+        title: 'Documentos con Plazo de Respuesta',
+        path: `./${routesPath.loggedin.documentswithresponsetime}`,
+        icon: { class: 'material-icons-outlined icons', name: 'view_list' },
+        view: 'documentswithresponsetime'
+    },
+    {
+        title: 'Búsqueda de Documentos',
+        path: `./${routesPath.loggedin.documentssearch}`,
+        icon: { class: 'material-icons-outlined icons', name: 'view_list' },
+        view: 'documentssearch'
+    },
+    {
+        title: 'Bandeja de Entrada Oficina Partes',
+        path: `./${routesPath.loggedin.inbox}`,
+        icon: { class: 'material-icons-outlined icons', name: 'view_list' },
+        view: 'inbox'
+    },
+    {
+        title: 'Bandeja de Salida Oficina Partes',
+        path: `./${routesPath.loggedin.outbox}`,
+        icon: { class: 'material-icons-outlined icons', name: 'view_list' },
+        view: 'outbox'
     },
     {
         title: 'login',

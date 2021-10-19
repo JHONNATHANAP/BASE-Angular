@@ -52,6 +52,30 @@ const routes: Routes = [
         path: routesPath.loggedin.detailRequirement,
         loadChildren: () => import('./pages/detail-requirement/detail-requirement-routing.module').then(m => m.DetailRequirementRoutingModule)
       },
+      {
+        path: routesPath.loggedin.documentssearch,
+        loadChildren: () => import('./pages/documents-search/documents-search-routing.module').then(m => m.DocumentsSearchRoutingModule)
+      },
+      {
+        path: routesPath.loggedin.documentswithresponsetime,
+        loadChildren: () => import('./pages/documents-with-response-time/documents-with-response-time-routing.module').then(m => m.DocumentsWithResponseTimeRoutingModule)
+      },
+      {
+        path: routesPath.loggedin.inbox,
+        loadChildren: () => import('./pages/inbox/inbox-routing.module').then(m => m.InboxRoutingModule)
+      },
+      {
+        path: routesPath.loggedin.mydocuments,
+        loadChildren: () => import('./pages/my-documents/my-documents-routing.module').then(m => m.MyDocumentsRoutingModule)
+      },
+      {
+        path: routesPath.loggedin.myshares,
+        loadChildren: () => import('./pages/my-shares/my-shares-routing.module').then(m => m.MySharesRoutingModule)
+      },
+      {
+        path: routesPath.loggedin.outbox,
+        loadChildren: () => import('./pages/outbox/outbox-routing.module').then(m => m.OutboxRoutingModule)
+      },
 
     ]
   }
