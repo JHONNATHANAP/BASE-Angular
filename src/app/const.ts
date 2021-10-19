@@ -67,6 +67,55 @@ export const views = [
         view: 'todomailbox'
     },
     {
+        title: 'Mis Documentos',
+        path: `./${routesPath.loggedin.mydocuments}`,
+        icon: { class: 'material-icons-outlined icons', name: 'description' },
+        view: 'mydocuments'
+    },
+    {
+        title: 'Mis Participaciones',
+        path: `./${routesPath.loggedin.myshares}`,
+        icon: { class: 'material-icons-outlined icons', name: 'trending_up' },
+        view: 'myshares'
+    },
+    {
+        title: 'Documentos con Plazo de Respuesta',
+        path: `./${routesPath.loggedin.documentswithresponsetime}`,
+        icon: { class: 'material-icons-outlined icons', name: 'description' },
+        view: 'documentswithresponsetime'
+    },
+    {
+        title: 'Visitados Recientemente',
+        path: `./${routesPath.loggedin.recentlyVisited}`,
+        icon: { class: 'material-icons-outlined icons', name: 'visibility' },
+        view: 'recentlyvisited'
+    },
+    {
+        title: 'Búsqueda de Documentos',
+        path: `./${routesPath.loggedin.documentssearch}`,
+        icon: { class: 'material-icons-outlined icons', name: 'find_in_page ' },
+        view: 'documentssearch'
+    },
+    {
+        title: 'Bandeja de Entrada Oficina Partes',
+        path: `./${routesPath.loggedin.inbox}`,
+        icon: { class: 'material-icons-outlined icons', name: 'archive' },
+        view: 'inbox'
+    },
+    {
+        title: 'Bandeja de Salida Oficina Partes',
+        path: `./${routesPath.loggedin.outbox}`,
+        icon: { class: 'material-icons-outlined icons', name: 'unarchive' },
+        view: 'outbox'
+    },
+    {
+        title: 'Detalle de Solicitud',
+        path: `./${routesPath.loggedin.detailRequest}`,
+        icon: { class: 'material-icons-outlined icons', name: 'assignment' },
+        view: 'detailrequest'
+    },
+ 
+    {
         title: 'Ingreso Documento',
         path: `./${routesPath.loggedin.newDocument}`,
         icon: { class: 'material-icons-outlined icons', name: 'article' },
@@ -78,72 +127,31 @@ export const views = [
         icon: { class: 'material-icons-outlined icons', name: 'edit' },
         view: 'newrequirement'
     },
-    {
-        title: 'Detalle de Solicitud',
-        path: `./${routesPath.loggedin.detailRequest}`,
-        icon: { class: 'material-icons-outlined icons', name: 'assignment' },
-        view: 'detailrequest'
-    },
+ 
     {
         title: 'Mis datos',
         path: `./${routesPath.loggedin.myData}`,
         icon: { class: 'material-icons-outlined icons', name: 'assignment_ind' },
         view: 'mydata'
     },
-    {
-        title: 'Visitados Recientemente',
-        path: `./${routesPath.loggedin.recentlyVisited}`,
-        icon: { class: 'material-icons-outlined icons', name: 'visibility' },
-        view: 'recentlyvisited'
-    },
+   
     {
         title: 'Ingreso Detalle',
         path: `./${routesPath.loggedin.newDetail}`,
         icon: { class: 'material-icons-outlined icons', name: 'open_in_new' },
         view: 'newdetail'
     },
+  
     {
         title: 'Detalle de Requerimiento',
         path: `./${routesPath.loggedin.detailRequirement}`,
         icon: { class: 'material-icons-outlined icons', name: 'assignment' },
         view: 'detailrequirement'
     },
-    {
-        title: 'Mis Participaciones',
-        path: `./${routesPath.loggedin.myshares}`,
-        icon: { class: 'material-icons-outlined icons', name: 'view_list' },
-        view: 'myshares'
-    },
-    {
-        title: 'Mis Documentos',
-        path: `./${routesPath.loggedin.mydocuments}`,
-        icon: { class: 'material-icons-outlined icons', name: 'view_list' },
-        view: 'mydocuments'
-    },
-    {
-        title: 'Documentos con Plazo de Respuesta',
-        path: `./${routesPath.loggedin.documentswithresponsetime}`,
-        icon: { class: 'material-icons-outlined icons', name: 'view_list' },
-        view: 'documentswithresponsetime'
-    },
-    {
-        title: 'Búsqueda de Documentos',
-        path: `./${routesPath.loggedin.documentssearch}`,
-        icon: { class: 'material-icons-outlined icons', name: 'view_list' },
-        view: 'documentssearch'
-    },
-    {
-        title: 'Bandeja de Entrada Oficina Partes',
-        path: `./${routesPath.loggedin.inbox}`,
-        icon: { class: 'material-icons-outlined icons', name: 'view_list' },
-        view: 'inbox'
-    },
-    {
-        title: 'Bandeja de Salida Oficina Partes',
-        path: `./${routesPath.loggedin.outbox}`,
-        icon: { class: 'material-icons-outlined icons', name: 'view_list' },
-        view: 'outbox'
-    },
+  
+  
+  
+  
     {
         title: 'login',
         path: `../${routesPath.loggedout.path}/${routesPath.loggedout.login}`,
