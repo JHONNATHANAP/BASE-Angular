@@ -19,7 +19,8 @@
 
                     <app-form-field [required]="true" [control]="form.controls.password" [isInline]="false"
                         [patternError]="regexErrors.password">
-                        <app-material-input type="password" placeholder="Clave" formControlName="password"></app-material-input>
+                        <app-material-input type="password" placeholder="Clave" formControlName="password">
+                        </app-material-input>
                     </app-form-field>
                     <app-button type="submit">Iniciar sesión</app-button>
                 </form>
@@ -27,9 +28,9 @@
             <div class="options">
                 <a class="app-a">
                     <span class="material-icons-outlined">
-                        file_download
-                        </span>
-                        Descargar Manual
+                        download
+                    </span>
+                    Descargar Manual
                 </a>
             </div>
         </div>

@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
       const value = this.form.value;
 
       const userLoginRequest: fromUser.EmailPasswordCredentials = {
-        email: value.email,
+        user: value.email,
         password: value.password,
       }
      // this.router.navigate(['/in/profiles']);

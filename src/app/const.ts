@@ -103,7 +103,7 @@ export const views = [
     {
         title: 'login',
         path: `../${routesPath.loggedout.path}/${routesPath.loggedout.login}`,
-        icon: { class: 'material-icons', name: 'login' },
+        icon: { class: 'material-icons-outlined icons', name: 'login' },
         view: 'login'
     }
 ]
